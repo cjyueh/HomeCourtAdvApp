@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/HCA-app');
 process.on('exit', function(){mongoose.disconnect();});
 
 var teamsController = require('./controllers/teamsController');
+// var usersController = require('./controllers/usersController');
 
 var routes = require('./config/routes');
 // var users = require('./routes/users');

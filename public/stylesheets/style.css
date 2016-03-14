@@ -1,8 +1,18 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: 'Oswald', sans-serif;
+  padding-top: 50px;
 }
 
-a {
-  color: #00B7FF;
+.jumbotron {
+	/*background: url("/images/sports-fans-2.jpg") no-repeat center center fixed;*/
+	background: url("http://www.legendssportsbar.com/wp-content/uploads/2014/02/Legends-Sports-Bar-The-First-Modern-Sports-Bar-in-America.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 1000px;
+}
+
+.center {
+	text-align: center;
 }
