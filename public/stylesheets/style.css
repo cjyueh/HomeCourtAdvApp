@@ -16,3 +16,9 @@ body {
 .center {
 	text-align: center;
 }
+
+.form-centered {
+	display: inline-block;
+	float: none;
+	text-align: left;
+}

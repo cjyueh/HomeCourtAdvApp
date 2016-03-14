@@ -6,12 +6,12 @@ var TeamSchema = new Schema ({
   name: String,
   league: String,
   origin: String,
-  logo: String,
+  logo: String
   // add after we create models
-  events: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Event'
-  }]
+  // events: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Event'
+  // }]
 
   // bars: [{ref: 'Bar'}]
 });
