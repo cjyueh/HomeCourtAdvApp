@@ -21,7 +21,7 @@
             <li><a href="#">New York Red Bulls</a></li>
             <li><a href="#">LA Galaxy</a></li>
           </ul>
-        </li>  
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NBA <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -48,8 +48,15 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">CREATE ACCOUNT</a></li>
-        <li><a href="#">SIGN IN</a></li>
+        {{#if user.fb}}
+          <li><a href="/users/{{user._id}}">Logged In As, {{user.fb.firstName}} {{user.fb.lastName}}</a></li>
+          <li><a href="/users/{{user._id}}">{{user.google.firstName}} {{user.google.lastName}}</a></li>
+          <li><a href="/logout">LOGOUT</a></li>
+        {{else}}
+          <li><a href="/users/new">CREATE ACCOUNT</a></li>
+          <li><a href="/auth/facebook">Sign In with Facebook</a></li>
+          <li><a href="/auth/google">Sign In with Google</a></li>
+        {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

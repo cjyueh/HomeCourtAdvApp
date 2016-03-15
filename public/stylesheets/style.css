@@ -16,3 +16,24 @@ body {
 .center {
 	text-align: center;
 }
+
+.form-centered {
+	display: inline-block;
+	float: none;
+	text-align: left;
+}
+
+/*google maps styling*/
+
+#bars-explain {
+	text-align: center;
+}
+
+#map {
+	width:800px;
+	height:500px;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
