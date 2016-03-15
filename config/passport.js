@@ -1,7 +1,7 @@
 var User = require('../models/user');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var OAuth = require('../secrets');
 
 passport.use('facebook', new FacebookStrategy({
