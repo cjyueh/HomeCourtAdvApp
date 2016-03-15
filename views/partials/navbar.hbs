@@ -50,12 +50,16 @@
       <ul class="nav navbar-nav navbar-right">
         {{#if user.fb}}
           <li><a href="/users/{{user._id}}">Logged In As, {{user.fb.firstName}} {{user.fb.lastName}}</a></li>
-          <li><a href="/users/{{user._id}}">{{user.google.firstName}} {{user.google.lastName}}</a></li>
           <li><a href="/logout">LOGOUT</a></li>
         {{else}}
+            {{#if user.google}}
+          <li><a href="/users/{{user._id}}">Logged In To Google, {{user.google.displayName}}</a></li>
+          <li><a href="/logout">LOGOUT</a></li>
+            {{else}}
           <li><a href="/users/new">CREATE ACCOUNT</a></li>
           <li><a href="/auth/facebook">Sign In with Facebook</a></li>
           <li><a href="/auth/google">Sign In with Google</a></li>
+            {{/if}}
         {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
