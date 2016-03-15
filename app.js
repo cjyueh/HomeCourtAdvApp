@@ -47,8 +47,10 @@ app.use(methodOverride('_method'));
 app.use(routes);
 // app.use('/users', users);
 app.get('/auth/facebook', passport.facebookAuthenticate);
-
 app.get('/auth/facebook/callback',  passport.facebookCallback);
+
+app.get('/auth/google', passport.googleAuthenticate);
+app.get('/oauth2callback', passport.googleCallback);
 
 app.get('/logout', function(req, res){
   req.logout();
