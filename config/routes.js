@@ -25,10 +25,9 @@ router.route('/')
 // TEAM routes
 router.route('/teams/:id')
   .get(teamsController.showTeam)
-  .get(eventsController.indexEvents);
 
-// router.route('/teams')
-//   .get(teamsController.index);
+router.route('/teams/api/:id')
+  .get(teamsController.teamApi);
 
 // USER routes // signup could just be edit
 router.route('/users')

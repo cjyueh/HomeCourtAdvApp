@@ -1,4 +1,5 @@
-var Team = require('../models/Team');
+var Team = require('../models/team');
+var Bar = require('../models/bar');
 
 var teamsController = {
   indexTeams: function (req, res) {
@@ -28,6 +29,33 @@ var teamsController = {
       // var teams = Team.find({});  //trying to get index of teams to show from navbar dropdown
       // console.log({teams: teams});
       err ? console.log(err) : res.render('teams/show', {team: team});
+    });
+  },
+  teamApi: function(req, res) {
+    var id = req.params.id;
+    var barIdArray = [];
+
+    // console.log("this is id:", id);
+    Team.findById({_id: id}, function(err, team){
+      if (err) {
+        console.log(err);
+      }
+      else {
+
+        for (var i = 0; i < team.bars.length; i++) {
+          barIdArray.push(team.bars[i]);
+          console.log(team.bars[i]);
+        }
+        // for (var i = 0; i <= barIdArray.length; i++) {
+        // }
+
+        Bar.find({_id: {$in: [barIdArray[0], barIdArray[1]]} }, function(err, bar) {
+          res.json(bar)
+          console.log(barIdArray)
+        })
+
+      }
+
     });
   }
 };
