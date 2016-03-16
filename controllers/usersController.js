@@ -78,7 +78,7 @@ var usersController = {
       // this needs to save...
       user.save(function(err, data){
         console.log(err);
-        res.redirect('/users');
+        res.redirect('/users/'+ id);
       });
     });
   },
