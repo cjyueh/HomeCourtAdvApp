@@ -60,9 +60,19 @@ function createMap(){
   });
 }
 
+// get team id from url
+
+    // url = window.location.search.substring(1));
+  var pathname = window.location.pathname;
+  var splitUrl = pathname.split('/');
+  var teamId = splitUrl[2];
+
+
+
+
 
 // render bar pin on page through teams
-var teamEndpoint = "/teams/api/" + "56e9968d2677aed3a39e498a";
+var teamEndpoint = "/teams/api/" + teamId;
 console.log(teamEndpoint);
 
 teamObjArray = []

@@ -43,16 +43,17 @@ var teamsController = {
       else {
 
         for (var i = 0; i < team.bars.length; i++) {
-          barIdArray.push(team.bars[i]);
-          console.log(team.bars[i]);
-        }
-        // for (var i = 0; i <= barIdArray.length; i++) {
-        // }
+          barIdArray.push(team.bars[i]); 
 
-        Bar.find({_id: {$in: [barIdArray[0], barIdArray[1]]} }, function(err, bar) {
-          res.json(bar)
-          console.log(barIdArray)
-        })
+          // for (var i = 0; i <= barIdArray.length; i++) {
+          // }
+
+          // why cant this iterate through the array?
+        }
+          Bar.find({_id: {$in: barIdArray }}, function(err, bar) {
+            res.json(bar)
+            // console.log(barIdArray)
+          })
 
       }
 
