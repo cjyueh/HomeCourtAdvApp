@@ -7,11 +7,7 @@ var BarSchema = new Schema({
   city: String,
   state: String,
   lat: Number,
-  long: Number,
-  teams: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Team'
-  }]
+  long: Number
 });
 
 var Bar = mongoose.model('Bar', BarSchema);
