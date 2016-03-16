@@ -1,22 +1,22 @@
   <div class="page-header center">
     <h1>Create Your User Profile</h1>
   </div>
-  <form id="new-user-form" method="POST" action="/users/new">
+  <form class="container center" id="new-user-form" method="POST" action="/users/new">
     {{!-- <div class="form-group col-md-4 form-centered">
       <input class="form-control"  name="email" type="text" value="{{user.email}}" placeholder="email" />
     </div> --}}
     <div class="form-group col-md-4 form-centered">
       <h3 id="user-email">Email: {{user.fb.email}}</h3>
-    </div>
+    </div><br>
     <div class="form-group col-md-4 form-centered">
       <textarea class="form-control" id="user-about" name="about" type="text" value="{{user.about}}" placeholder="write something about yourself"></textarea>
-    </div>
+    </div><br>
     <div class="form-group col-md-4 form-centered">
       <input class="form-control" id="user-picture" name="picture" type="text" value="{{user.picture}}" placeholder="image URL" />
-    </div>
-    <div class="form-group col-md-4 form-centered">
+    </div><br>
+    {{!-- <div class="form-group col-md-4 form-centered">
       <input class="form-control" id="user-favorites" name="favorites" type="text" value="{{user.favorites}}" placeholder="favorites" />
-    </div>
+    </div><br> --}}
     <div class="form-group col-md-4 form-centered">
       <input class="btn btn-primary col-md-12" type="submit" value="CREATE PROFILE" />
     </div>
