@@ -22,6 +22,8 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	height: 1000px;
+	text-align: center;
+	color: white;
 }
 
 .center {
