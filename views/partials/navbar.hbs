@@ -56,7 +56,7 @@
           <li><a href="/logout">LOGOUT</a></li>
         {{else}}
             {{#if user.google}}
-          <li><a href="/users/{{user._id}}">Logged In To Google, {{user.google.displayName}}</a></li>
+          <li><a href="/users/{{user._id}}">Logged In To Google, {{user.google.email}}</a></li>
           <li><a href="/logout">LOGOUT</a></li>
             {{else}}
           <!-- <li><a href="/users/new">CREATE ACCOUNT</a></li> -->
