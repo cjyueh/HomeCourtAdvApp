@@ -25,16 +25,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NBA <span class="caret"></span></a>
           <ul class="dropdown-menu" id="teams-nav">
-
-          <script id="teams-nav-template" type="text/x-handlebars-template">
-            \{{#each teams}}
-            <li><a href="/teams/\{{_id}}">\{{origin}} \{{name}}</a></li>
-            \{{/each}}
+            <script id="teams-nav-template" type="text/x-handlebars-template">
+              \{{#each teams}}
+              <li><a href="/teams/\{{_id}}">\{{origin}} \{{name}}</a></li>
+              \{{/each}}
             </script>
-
-     {{!--        <li><a href="/teams/56e8519b7d4d581f480f8e4f">Charlotte Hornets</a></li>
-            <li><a href="/teams/56e8519b7d4d581f480f8e4e">Chicago Bulls</a></li>
-            <li><a href="/teams/56e8519b7d4d581f480f8e50">New York Knicks</a></li> --}}
           </ul>
         </li>
         <li class="dropdown">
@@ -55,19 +50,19 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        {{#if user.fb}}
-          <li><a href="/users/{{user._id}}">Logged In As, {{user.fb.firstName}} {{user.fb.lastName}}</a></li>
+        {{!-- {{#if user.fb}}
+          <!-- <li><a href="/users/{{user._id}}"><img src="{{user.picture}}" class="user-avatar"/>{{user.fb.firstName}}</a></li> -->
           <li><a href="/logout">LOGOUT</a></li>
-        {{else}}
+        {{else}} --}}
             {{#if user.google}}
-          <li><a href="/users/{{user._id}}">Logged In To Google, {{user.google.email}}</a></li>
+          <li><a href="/users/{{user._id}}"><img src="{{user.picture}}" class="user-avatar"/>Logged In To Google, {{user.google.displayName}}</a></li>
           <li><a href="/logout">LOGOUT</a></li>
             {{else}}
           <!-- <li><a href="/users/new">CREATE ACCOUNT</a></li> -->
           <li><a href="/">SIGN IN:</a></li>
           <li><a href="/auth/facebook"><img src="../images/fb.png" class=fb-login></a></li>
           <li><a href="/auth/google"><img src="../images/goog.png" class=goog-login></a></li>
-            {{/if}}
+            {{!-- {{/if}} --}}
         {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->

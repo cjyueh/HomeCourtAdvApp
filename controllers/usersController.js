@@ -32,7 +32,9 @@ var usersController = {
   },
   showUser: function (req, res) {
     var id = req.params.id;
+    console.log(id);
     User.findById({_id: id}, function(err, user){
+      console.log({user: user});
       // err ? console.log(err) : res.json({user});
       err ? console.log(err) : res.render('users/show', {user: user});
     });
