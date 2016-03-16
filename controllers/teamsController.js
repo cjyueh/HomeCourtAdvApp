@@ -26,7 +26,7 @@ var teamsController = {
 
     Team.findById({_id: id}, function(err, team){
       console.log(team);
-      err ? console.log(err) : res.render('teams/show', {team: team});
+      err ? console.log(err) : res.render('teams/show', {user: req.user,team: team});
     });
 
   }
