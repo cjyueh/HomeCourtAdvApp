@@ -16,6 +16,7 @@ var UserSchema = new Schema ({
     id: String,
     access_token: String,
     displayName: String,
+    givenName: String,
     email: String
   },
     email: String,
