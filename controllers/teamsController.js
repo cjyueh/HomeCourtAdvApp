@@ -34,29 +34,20 @@ var teamsController = {
   teamApi: function(req, res) {
     var id = req.params.id;
     var barIdArray = [];
-
-    // console.log("this is id:", id);
+    
     Team.findById({_id: id}, function(err, team){
       if (err) {
         console.log(err);
       }
       else {
-
         for (var i = 0; i < team.bars.length; i++) {
           barIdArray.push(team.bars[i]); 
-
-          // for (var i = 0; i <= barIdArray.length; i++) {
-          // }
-
-          // why cant this iterate through the array?
         }
-          Bar.find({_id: {$in: barIdArray }}, function(err, bar) {
-            res.json(bar)
-            // console.log(barIdArray)
-          })
 
+        Bar.find({_id: {$in: barIdArray }}, function(err, bar) {
+          res.json(bar)
+        })
       }
-
     });
   }
 };

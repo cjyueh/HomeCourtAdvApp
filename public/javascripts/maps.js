@@ -1,38 +1,31 @@
-// render a map
 function getBarInfo () {
+  // get team id from url
+  var pathname = window.location.pathname;
+  var splitUrl = pathname.split('/');
+  var teamId = splitUrl[2];
+
+  // call team api to get bar info
+  var teamEndpoint = "/teams/api/" + teamId;
+
+  var teamObjArray = []
+
   // google stuff
   var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
 
-  // later this will need to be through teams
-  var barEndpoint = "/bars"
+  // var teamObjArray = [];
 
-  var markerObjArray = [];
-
-  $.getJSON(barEndpoint, function(data){
-    bars = data;
-    // get all objects in bar db
-    for (var bar in data) {
-      // get each bar lat/long
-      for (i=0; i < data[bar].length; i++) {
-
-        markerObjArray.push(data[bar][i]);
-
-      }
-      /*
-        prob wont need this shit:
-        barLat = data[bar][i].lat;
-        barCity = data.bar[0].city;
-        var barName = data[bar][i].name;
-            __________________
-      */
+  $.getJSON(teamEndpoint, function(data){
+    var teams = data
+    for (var team in data ){
+        teamObjArray.push(data[team]);
     }
       // push bar data from db to array to iterate thru and append each marker
-    for (var i=0; i < markerObjArray.length; i++) {
+    for (var i=0; i < teamObjArray.length; i++) {
       // parse bar obj in array and get details
-      var name = markerObjArray[i].name;
-      var lat = markerObjArray[i].lat;
-      var long = markerObjArray[i].long;
+      var name = teamObjArray[i].name;
+      var lat = teamObjArray[i].lat;
+      var long = teamObjArray[i].long;
 
       // render each bar as pin on map
       var marker = new google.maps.Marker({
@@ -50,7 +43,7 @@ function getBarInfo () {
       renderBarInfo(marker, name);
     }
 
-  })
+  }) //end ajax 
 }
 
 function createMap(){
@@ -60,45 +53,8 @@ function createMap(){
   });
 }
 
-// get team id from url
-
-    // url = window.location.search.substring(1));
-  var pathname = window.location.pathname;
-  var splitUrl = pathname.split('/');
-  var teamId = splitUrl[2];
-
-
-
-
-
-// render bar pin on page through teams
-var teamEndpoint = "/teams/api/" + teamId;
-console.log(teamEndpoint);
-
-teamObjArray = []
-
-function getTeamInfo () {
-  $.getJSON(teamEndpoint, function(data){
-    teams = data
-    // teamObjArray.push(teams);
-    // console.log(teams[0]["bars"][0]);
-
-    for (var team in data ){
-      // for (var i=0; i < data[team].length; i++) {
-        teamObjArray.push(data[team]);
-        // console.log(teams[0]["bars"][0]);
-        // console.log(data[team]);
-      // }
-      // teamObjArray.push(teams);
-    }
-
-  })
-}
-
-
 getBarInfo();
 
 createMap();
 
-getTeamInfo();
 
