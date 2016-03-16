@@ -7,7 +7,11 @@
       <input class="form-control" id="user-email" name="email" type="text" value="{{user.email}}" placeholder="email" />
     </div> --}}
     <div class="form-group col-md-4 form-centered">
-      <h4 id="user-email">Email: {{user.fb.email}}</h4>
+      {{#if user.fb.firstName}}
+        <h4 id="user-email">Email: {{user.fb.email}}</h4>
+      {{else if user.google.displayName}}
+        <h4 id="user-email">Email: {{user.google.email}}</h4>
+      {{/if}}
     </div><br>
     <div class="form-group col-md-4 form-centered">
       <textarea class="form-control" id="user-about" name="about" type="text" value="{{user.about}}" placeholder="write something about yourself">{{user.about}}</textarea>
