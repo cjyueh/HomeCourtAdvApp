@@ -54,7 +54,7 @@
           <li><a href="/users/{{user._id}}"><img src="{{user.picture}}" class="user-avatar"/>{{user.fb.firstName}}</a></li>
           <li><a href="/logout">LOGOUT</a></li>
         {{else if user.google.displayName}}
-          <li><a href="/users/{{user._id}}"><img src="{{user.picture}}" class="user-avatar"/>Logged In To Google, {{user.google.displayName}}</a></li>
+          <li><a href="/users/{{user._id}}"><img src="{{user.picture}}" class="user-avatar"/>{{user.google.displayName}}</a></li>
           <li><a href="/logout">LOGOUT</a></li>
         {{else}}
           <!-- <li><a href="/users/new">CREATE ACCOUNT</a></li> -->
