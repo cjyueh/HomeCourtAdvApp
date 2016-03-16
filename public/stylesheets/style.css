@@ -3,6 +3,17 @@ body {
   padding-top: 50px;
 }
 
+.fb-login {
+	max-height: : 30px;
+	float: right;
+}
+
+.goog-login {
+	max-height: 32px;
+	float: right;
+
+}
+
 .jumbotron {
 	/*background: url("/images/sports-fans-2.jpg") no-repeat center center fixed;*/
 	background: url("http://www.legendssportsbar.com/wp-content/uploads/2014/02/Legends-Sports-Bar-The-First-Modern-Sports-Bar-in-America.jpg") no-repeat center center fixed;
