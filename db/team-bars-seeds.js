@@ -37,6 +37,7 @@ Team.create(teams, function(err, teams){
     console.log(err);
   } else {
     console.log("created: ", teams);
+  
   var bars = [
     {
       name: "beer garden",
