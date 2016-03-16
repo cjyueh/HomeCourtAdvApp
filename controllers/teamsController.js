@@ -51,6 +51,11 @@ var teamsController = {
         })
       }
     });
+  },
+  teamsNav: function(req,res) {
+    Team.find({}, function(err, data){
+      res.json(data);
+    })
   }
 };
 
