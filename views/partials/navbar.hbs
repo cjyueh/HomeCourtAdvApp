@@ -24,13 +24,17 @@
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NBA <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            {{!-- {{#each teams}}
-            <li><a href="/teams/{{_id}}">{{origin}} {{name}}</a></li>
-            {{/each}} --}}
-            <li><a href="/teams/56e8519b7d4d581f480f8e4f">Charlotte Hornets</a></li>
+          <ul class="dropdown-menu" id="teams-nav">
+
+          <script id="teams-nav-template" type="text/x-handlebars-template">
+            \{{#each teams}}
+            <li><a href="/teams/\{{_id}}">\{{origin}} \{{name}}</a></li>
+            \{{/each}}
+            </script>
+
+     {{!--        <li><a href="/teams/56e8519b7d4d581f480f8e4f">Charlotte Hornets</a></li>
             <li><a href="/teams/56e8519b7d4d581f480f8e4e">Chicago Bulls</a></li>
-            <li><a href="/teams/56e8519b7d4d581f480f8e50">New York Knicks</a></li>
+            <li><a href="/teams/56e8519b7d4d581f480f8e50">New York Knicks</a></li> --}}
           </ul>
         </li>
         <li class="dropdown">

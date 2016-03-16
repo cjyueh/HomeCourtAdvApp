@@ -23,6 +23,9 @@ router.route('/')
   .get(teamsController.indexTeams);
 
 // TEAM routes
+router.route('/teams/api')
+  .get(teamsController.teamsNav);
+
 router.route('/teams/:id')
   .get(teamsController.showTeam)
 
