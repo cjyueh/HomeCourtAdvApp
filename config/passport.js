@@ -20,6 +20,7 @@ passport.use('facebook', new FacebookStrategy({
     User.findOne({ 'fb.id' : profile.id }, function(err, user) {
       if (err) return done(err);
       if (user) {
+        console.log(user);
         return done(null, user);
       } else {
 
@@ -45,18 +46,21 @@ passport.use('facebook', new FacebookStrategy({
 passport.use(new GoogleStrategy({
   clientID        : OAuth.google.clientID,
   clientSecret    : OAuth.google.clientSecret,
-  callbackURL     : OAuth.google.callbackURL
+  callbackURL     : OAuth.google.callbackURL,
+  enableProof     : true,
+  profileFields   : ['name', 'emails']
 },
   function(access_token, refresh_token, profile, done) {
-      console.log(profile.displayName);
+      // console.log(profile.displayName);
     process.nextTick(function(){
 
       // debugger;
       User.findOne({ 'google.id' : profile.id}, function (err, user) {
-        // console.log(profile.id);
+        console.log(profile);
         if (err)
           return done (err);
         if (user) {
+          console.log(user);
           return done(null, user);
         }  else {
           var newUser = new User();
