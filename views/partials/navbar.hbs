@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="navbar-btn-collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MLS <span class="glyphicon glyphicon-chevron-down"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MLS <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">D.C. United</a></li>
             <li><a href="#">New York Red Bulls</a></li>
@@ -34,7 +34,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NFL {{!-- <span class="caret"></span> --}}</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NFL <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Chicago Bears</a></li>
             <li><a href="#">Carolina Panthers</a></li>
@@ -60,8 +60,9 @@
           <li><a href="/logout">LOGOUT</a></li>
             {{else}}
           <li><a href="/users/new">CREATE ACCOUNT</a></li>
-          <li><a href="/auth/facebook">Sign In with Facebook</a></li>
-          <li><a href="/auth/google">Sign In with Google</a></li>
+          <li><a href="/">SIGN IN WITH:</a></li>
+          <li><a href="/auth/facebook"><img src="../images/fb.png" class=fb-login></a></li>
+          <li><a href="/auth/google"><img src="../images/goog.png" class=goog-login></a></li>
             {{/if}}
         {{/if}}
       </ul>
