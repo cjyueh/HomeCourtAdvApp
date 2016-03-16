@@ -33,8 +33,9 @@ var teamsController = {
   },
   teamApi: function(req, res) {
     var id = req.params.id;
-    var barIdArray = [];
     
+    var barIdArray = [];
+
     Team.findById({_id: id}, function(err, team){
       if (err) {
         console.log(err);
