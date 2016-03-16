@@ -27,7 +27,7 @@ var teamsController = {
       // console.log(team);
       // var teams = Team.find({});  //trying to get index of teams to show from navbar dropdown
       // console.log({teams: teams});
-      err ? console.log(err) : res.render('teams/show', {team: team});
+      err ? console.log(err) : res.render('teams/show', {user: req.user, team: team});
     });
   }
 };
