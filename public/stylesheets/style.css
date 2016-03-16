@@ -15,8 +15,7 @@ body {
 }
 
 .jumbotron {
-	/*background: url("/images/sports-fans-2.jpg") no-repeat center center fixed;*/
-	background: url("http://www.legendssportsbar.com/wp-content/uploads/2014/02/Legends-Sports-Bar-The-First-Modern-Sports-Bar-in-America.jpg") no-repeat center center fixed;
+	background: url("/images/sports-bar.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -54,4 +53,8 @@ body {
 /*-- user profile picture --*/
 #profile-pic {
 	width: 200px;
+}
+
+.user-avatar {
+	height: 15px;
 }

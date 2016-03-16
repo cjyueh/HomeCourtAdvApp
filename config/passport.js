@@ -46,7 +46,9 @@ passport.use('facebook', new FacebookStrategy({
 passport.use(new GoogleStrategy({
   clientID        : OAuth.google.clientID,
   clientSecret    : OAuth.google.clientSecret,
-  callbackURL     : OAuth.google.callbackURL
+  callbackURL     : OAuth.google.callbackURL,
+  enableProof     : true,
+  profileFields   : ['name', 'emails']
 },
   function(access_token, refresh_token, profile, done) {
       // console.log(profile.displayName);
