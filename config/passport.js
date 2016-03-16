@@ -48,11 +48,11 @@ passport.use(new GoogleStrategy({
   callbackURL     : OAuth.google.callbackURL
 },
   function(access_token, refresh_token, profile, done) {
-      // console.log(profile);
+      console.log(profile.displayName);
     process.nextTick(function(){
 
       // debugger;
-      User.findOne({'google.id': profile.id}, function (err, user) {
+      User.findOne({ 'google.id' : profile.id}, function (err, user) {
         // console.log(profile.id);
         if (err)
           return done (err);
@@ -63,7 +63,7 @@ passport.use(new GoogleStrategy({
           console.log("New User ", newUser);
           newUser.google.id = profile.id;
           newUser.google.access_token = access_token;
-          newUser.google.name = profile.displayName;
+          newUser.google.displayName = profile.displayName;
           newUser.google.email = profile.emails[0].value;
 
           newUser.save(function(err) {

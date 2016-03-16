@@ -17,18 +17,18 @@ var teamsController = {
       // }else {
       //   err ? console.log(err) : res.render('index', {teams: teams});
       // }
-        err ? console.log(err) : res.render('index', {user: req.user,teams: teams});
+        err ? console.log(err) : res.render('index', {user: req.user, teams: teams});
     });
   },
   //nav bar is dependent on this function in order to display teams depending on what user does
   showTeam: function(req,res) {
     var id = req.params.id;
-
     Team.findById({_id: id}, function(err, team){
-      console.log(team);
+      // console.log(team);
+      // var teams = Team.find({});  //trying to get index of teams to show from navbar dropdown
+      // console.log({teams: teams});
       err ? console.log(err) : res.render('teams/show', {team: team});
     });
-
   }
 };
 

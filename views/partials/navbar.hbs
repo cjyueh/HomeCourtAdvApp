@@ -25,9 +25,12 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NBA <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            {{#each teams}}
+            {{!-- {{#each teams}}
             <li><a href="/teams/{{_id}}">{{origin}} {{name}}</a></li>
-            {{/each}}
+            {{/each}} --}}
+            <li><a href="/teams/56e8519b7d4d581f480f8e4f">Charlotte Hornets</a></li>
+            <li><a href="/teams/56e8519b7d4d581f480f8e4e">Chicago Bulls</a></li>
+            <li><a href="/teams/56e8519b7d4d581f480f8e50">New York Knicks</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -50,12 +53,16 @@
       <ul class="nav navbar-nav navbar-right">
         {{#if user.fb}}
           <li><a href="/users/{{user._id}}">Logged In As, {{user.fb.firstName}} {{user.fb.lastName}}</a></li>
-          <li><a href="/users/{{user._id}}">{{user.google.firstName}} {{user.google.lastName}}</a></li>
           <li><a href="/logout">LOGOUT</a></li>
         {{else}}
+            {{#if user.google}}
+          <li><a href="/users/{{user._id}}">Logged In To Google, {{user.google.displayName}}</a></li>
+          <li><a href="/logout">LOGOUT</a></li>
+            {{else}}
           <li><a href="/users/new">CREATE ACCOUNT</a></li>
-          <li><a href="/auth/facebook">Sign In: <img src="images/fb_50.png"></a></li>
-          <li><a href="/auth/google"><img src="images/goog40x40.png"></a></li>
+          <li><a href="/auth/facebook">Sign In with Facebook</a></li>
+          <li><a href="/auth/google">Sign In with Google</a></li>
+            {{/if}}
         {{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
