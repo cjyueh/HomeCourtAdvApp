@@ -1,9 +1,10 @@
 <div class="page-header center">
 	<h1><img id="profile-pic" src="{{user.picture}}" />
-	{{#if user.google}}
-		{{!-- Hello, {{user.fb.firstName}}</h1>
-	{{else}} --}}
+	{{#if user.fb}}
+		Hello, {{user.fb.firstName}}</h1>
+	{{else if user.google}}
 		<h1>Hello, {{user.google.displayName}}</h1>
+		<h1>Hello, {{user.google.name.givenName}}</h1>
 	{{/if}}
 </div>
 
