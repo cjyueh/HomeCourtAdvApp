@@ -1,6 +1,6 @@
 body {
 	font-family: 'Oswald', sans-serif;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .fb-login {
@@ -14,25 +14,16 @@ body {
 
 }
 
+/*-------------------- INDEX PAGE ------------------*/
 .jumbotron {
 	background: url("/images/sports-bar.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 625px;
+	height: 650px;
 	text-align: center;
 	color: white;
-}
-
-.center {
-	text-align: center;
-}
-
-.form-centered {
-	display: inline-block;
-	float: none;
-	text-align: left;
 }
 
 #site-description {
@@ -42,42 +33,76 @@ body {
 	padding-left: 0;
 	padding-right: 0;
 }
+/*--------------------------------------------------*/
 
-/*google maps styling*/
+ul {
+	list-style-type: none;
+}
+
+.page-header {
+	border-color: #9d9d9d;
+}
+
+/*--- GOOGLE MAPS STYLING ---*/
 
 #bars-explain {
 	text-align: center;
 }
 
 #map {
+	border: 1px solid #9d9d9d;
 	width:800px;
 	height:500px;
+	margin-bottom: 40px;
 }
 
 .g-pic {
-
 	height: 100px;	
 }
+/*---------------------------*/
 
-.col-centered{
-    float: none;
-    margin: 0 auto;
-}
-
-/*-- user profile picture --*/
-#profile-pic {
+/*--- USER PROFILE PICTURE ---*/
+#user-pic {
 	width: 200px;
 }
 
 .user-avatar {
-	height: 15px;
+	/*height: 15px;*/
+	max-height:30px;
+  width:auto;
+  vertical-align:middle;
+}
+/*---------------------------*/
+
+/*--------- BUTTONS ---------*/
+.btn {
+	background-color: #303030;
+	/*border: 1px solid #9d9d9d;*/
+	border-radius: 0;
+	color: #9d9d9d;
+	display: inline-block;
 }
 
+.btn:hover {
+	color: white;
+}
+
+.btn-bottom {
+	/*trying to position edit & delete user buttons near bottom of page*/
+}
+/*---------------------------*/
+
+#user-about {
+	height: 200px;
+}
+
+/*------- PAGE FOOTER -------*/
 .footer {
 	background-color: #303030;
 	bottom: 0;
 	color: #9d9d9d;
-	height: 40px;
+	height: 30px;
 	position: fixed;
 	width: 100%;
 }
+/*---------------------------*/
