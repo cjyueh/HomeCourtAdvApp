@@ -6,34 +6,31 @@ Note that as of now we have only deployed in San Francisco for the following NBA
 
 ## Deployment
 
-This is currently deployted on Heroku here (<a href=https://home-court-advantage.herokuapp.com</a>)
+This is currently deployted on Heroku [here](http://home-court-advantage.herokuapp.com)
 
 ## Built With
 
-* Dropwizard - Bla bla bla
-* Maven - Maybe
-* Atom - ergaerga
+* Node.js & Express
+* MongoDB/Mongoose
+* Passport with Google and Facebook OAuth
+* Google Maps API
+* Handlebars Templating
+* jQuery
+* Bootstrap
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please feel free to contribute to our project. Fork and clone our repo and submit pull requests for thoughtful review.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* **Christina Yueh ** - [cjyueh](https://github.com/cjyueh)
+* **Derek Chiampas ** - [dChiamp](https://github.com/dChiamp)
+* **Will Howell ** - [howellwho](https://github.com/howellwho)
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
+* Hat tip to anyone who's code was used when we Googled solutions
+* GA26
 * etc
