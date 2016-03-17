@@ -1,5 +1,6 @@
 var Team = require('../models/team');
 var Bar = require('../models/bar');
+var User = require('../models/user');
 
 var teamsController = {
   indexTeams: function (req, res) {
@@ -24,8 +25,9 @@ var teamsController = {
   //nav bar is dependent on this function in order to display teams depending on what user does
   showTeam: function(req,res) {
     var id = req.params.id;
-    var userId = req.body.user
-    console.log("this is the req.body", userId);
+    // req.session.userId
+    console.log("this is the user: ", req.user);
+    console.log("this is the users favorites: ", req.user.favorites);
 
     Team.findById({_id: id}, function(err, team){
       err ? console.log(err) : res.render('teams/show', {user: req.user,team: team});
@@ -58,15 +60,13 @@ var teamsController = {
   },
   userFav: function(req, res) {
     var teamId = req.params.id
-    var userId = req.body
-    console.log("this is the req.body", userId);
-    console.log("this is the user?", {user});
-    console.log(teamId);
-    // Team.findById({_id: teamId}, function(err, teamId){
-      // find user id
-      // add teamId to the fav array
-      // User.update()
-    // })
+    var userId = req.user._id
+
+    User.findOneAndUpdate({_id: userId, favorites: teamId}, function(err, user){
+        // user.favorites.push(teamId)
+        console.log(user.favorites)
+        res.send(user);
+    })
 
   }
 };

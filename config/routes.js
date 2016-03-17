@@ -27,7 +27,7 @@ router.route('/teams/api')
   .get(teamsController.teamsNav);
 
 router.route('/teams/:id')
-  .get(teamsController.showTeam, teamsController.userFav);
+  .get(/*teamsController.showTeam,*/ teamsController.userFav);
 
 
 router.route('/teams/api/:id')
