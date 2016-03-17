@@ -36,7 +36,7 @@ router.route('/teams/api/:id')
 
 // ajax route for user to fav a team
 router.route('/teams/api/:id/user')
-  .post(teamsController.userFav);
+  .put(teamsController.userFav);
 
 // USER routes // signup could just be edit
 router.route('/users')
