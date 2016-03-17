@@ -106,6 +106,36 @@ Team.remove({}, function(err){
       lat: 37.771965,
       long: -122.433312,
       yelp: "http://www.yelp.com/biz/danny-coyles-san-francisco"
+    },
+    {
+      name: "Taco Shop At Underdogs",
+      address: "1824 Irving St. San Francisco",
+      pic: "http://s3-media3.fl.yelpcdn.com/bphoto/wZfdQgo_DeYQNvyrk9Lluw/o.jpg",
+      city: "San Francisco",
+      state: "CA",
+      lat: 37.763801,
+      long: -122.477692,
+      yelp: "http://www.yelp.com/biz/the-taco-shop-at-underdogs-san-francisco-2"
+    },
+    {
+      name: "McCarthy’s",
+      address: "46 West Portal Ave. San Francisco",
+      pic: "http://s3-media4.fl.yelpcdn.com/bphoto/UtS6FfnArXGzAUdVRx2zQQ/o.jpg",
+      city: "San Francisco",
+      state: "CA",
+      lat: 37.740339,
+      long: -122.466414,
+      yelp: "http://www.yelp.com/biz/mccarthys-san-francisco"
+    },
+    { 
+      name: "Hockey Haven",
+      address: "3625 Balboa St. San Francisco",
+      pic: "http://s3-media4.fl.yelpcdn.com/bphoto/Y8AAV1KEUsGErPTIhKyOWQ/o.jpg",
+      city: "San Francisco",
+      state: "CA",
+      lat: 37.775506,
+      long: -122.497791,
+      yelp: "http://www.yelp.com/biz/hockey-haven-san-francisco"
     }
   ];
 
@@ -125,6 +155,9 @@ Bar.create(bars, function(err, bars){
     var aces = bars[6]._id;
     var petes = bars[7]._id;
     var dannyCoyles = bars[8]._id;
+    var tacoShop = bars[9]._id;
+    var mccarthys = bars[10]._id;
+    var hockeyHaven = bars[11]._id;
 
     console.log("created: ", bars)
 
@@ -136,7 +169,8 @@ Bar.create(bars, function(err, bars){
         logo: "http://content.sportslogos.net/logos/6/221/thumbs/hj3gmh82w9hffmeh3fjm5h874.gif",
         bars: [monaghans,
                doloresCorner,
-               madDog]
+               madDog,
+               tacoShop]
       },
       {
         name: "Hornets",
@@ -145,7 +179,8 @@ Bar.create(bars, function(err, bars){
         logo: "http://content.sportslogos.net/logos/6/5120/thumbs/512019262015.gif",
         bars: [greens,
                jackalope,
-               teds]
+               teds,
+               mccarthys]
       },
       {
         name: "Knicks",
@@ -154,7 +189,8 @@ Bar.create(bars, function(err, bars){
         logo: "http://content.sportslogos.net/logos/6/216/thumbs/2nn48xofg0hms8k326cqdmuis.gif",
         bars: [aces,
                petes,
-               dannyCoyles]
+               dannyCoyles,
+               hockeyHaven]
       }
     ];
   Team.create(teams, function(err, teams){
