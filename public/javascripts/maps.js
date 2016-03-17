@@ -1,3 +1,20 @@
+var latitude;
+var longitude;
+
+function getLocation() {
+  if (navigator.geolocation) {
+    var geoLoc = navigator.geolocation.getCurrentPosition(showPosition);
+  }
+}
+
+function showPosition(position) {
+     latitude = position.coords.latitude 
+     longitude = position.coords.longitude; 
+    console.log(latitude, longitude)
+}
+
+getLocation();
+
 function getBarInfo () {
   // get team id from url
   var pathname = window.location.pathname;
