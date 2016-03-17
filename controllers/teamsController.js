@@ -53,7 +53,9 @@ var teamsController = {
     User.findById({_id: userId}, function(err,user){
       // res.send(user);
       console.log(user);
-      user.favorites = teamId
+      if (user.favorites.indexOf(teamId) === -1 ) {
+        user.favorites.push(teamId)
+      }
 
       user.save(function(err, user){
         console.log(user);
@@ -61,6 +63,10 @@ var teamsController = {
         res.send(user);
         // res.redirect('/users/' + userId);
       })
+      // user.update({_id: userId}, {$push: {favorites: teamId} }, function(err, user){
+      //   console.log(user);
+      //   res.send(user);
+      // })
 
     })
   }
