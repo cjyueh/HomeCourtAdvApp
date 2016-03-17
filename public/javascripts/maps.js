@@ -27,7 +27,10 @@ function getBarInfo () {
   var teamObjArray = []
 
   // google stuff
-  var infowindow = new google.maps.InfoWindow();
+  var infowindow = new google.maps.InfoWindow({
+    maxWidth: 300
+  });
+
   var service = new google.maps.places.PlacesService(map);
 
   // var teamObjArray = [];
@@ -43,24 +46,28 @@ function getBarInfo () {
       var name = teamObjArray[i].name;
       var lat = teamObjArray[i].lat;
       var long = teamObjArray[i].long;
+      var address = teamObjArray[i].address;
+      var pic = teamObjArray[i].pic;
+      var yelp = teamObjArray[i].yelp;
 
       // render each bar as pin on map
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, long),
+        animation: google.maps.Animation.DROP,
         map: map,
         // title: barName
       });
 
-      function renderBarInfo (marker, name) {
+      function renderBarInfo (marker, name, address, pic) {
         google.maps.event.addListener(marker, 'click', function(e) {
-            infowindow.setContent(name);
             infowindow.open(map, marker);
+            infowindow.setContent("<div style='width:180px;height:150px;'>"+ name + '<br>' + address + '<br>' + "<a href=" + yelp + " target='_blank'>" + "Website</a>" + '<br>' + "<img class='g-pic' src=" + pic + "></div>");
         });
-      } 
-      renderBarInfo(marker, name);
+      }
+      renderBarInfo(marker, name, address, pic);
     }
 
-  }) //end ajax 
+  }) //end ajax
 }
 
 function createMap(){
@@ -73,5 +80,3 @@ function createMap(){
 getBarInfo();
 
 createMap();
-
-

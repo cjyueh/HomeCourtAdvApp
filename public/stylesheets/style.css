@@ -45,6 +45,12 @@ body {
 	width:800px;
 	height:500px;
 }
+
+.g-pic {
+
+	height: 100px;	
+}
+
 .col-centered{
     float: none;
     margin: 0 auto;
