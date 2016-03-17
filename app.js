@@ -10,7 +10,12 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var expressSession = require('express-session');
 
-mongoose.connect('mongodb://localhost/HCA-app');
+// mongoose.connect('mongodb://localhost/HCA-app');
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/HCA-app'
+);
 process.on('exit', function(){mongoose.disconnect();});
 
 var teamsController = require('./controllers/teamsController');
@@ -44,7 +49,7 @@ app.use(express.static(path .join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
 
-// persist user login info 
+// persist user login info
 /*
 var User = require('./models/user');
 app.use(function(req, res, next) {
