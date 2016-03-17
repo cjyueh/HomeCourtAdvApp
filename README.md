@@ -25,9 +25,9 @@ Please feel free to contribute to our project. Fork and clone our repo and submi
 
 ## Authors
 
-* **Christina Yueh ** - [cjyueh](https://github.com/cjyueh)
-* **Derek Chiampas ** - [dChiamp](https://github.com/dChiamp)
-* **Will Howell ** - [howellwho](https://github.com/howellwho)
+* **Christina Yueh** - [cjyueh](https://github.com/cjyueh)
+* **Derek Chiampas** - [dChiamp](https://github.com/dChiamp)
+* **Will Howell** - [howellwho](https://github.com/howellwho)
 
 ## Acknowledgments
 
