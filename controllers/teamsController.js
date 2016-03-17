@@ -63,8 +63,6 @@ var teamsController = {
         res.send(user);
         // res.redirect('/users/' + userId);
       })
-      // user.favorites
-
       // user.update({_id: userId}, {$push: {favorites: teamId} }, function(err, user){
       //   console.log(user);
       //   res.send(user);
