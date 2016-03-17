@@ -1,34 +1,31 @@
-  <div class="page-header center">
+  <div class="page-header text-center">
     <h1>Edit Your User Profile</h1>
   </div>
   {{!-- <form id="edit-user-form" method="POST" action="/users/{{user._id}}?_method=PUT"> --}}
-  <form class="container center" id="edit-user-form" method="POST" action="/users/{{user._id}}/edit">
-    {{!-- <div class="form-group col-md-4 form-centered">
-      <input class="form-control" id="user-email" name="email" type="text" value="{{user.email}}" placeholder="email" />
-    </div> --}}
-    <div class="form-group col-md-4 form-centered">
+  <form class="container text-center" id="edit-user-form" method="POST" action="/users/{{user._id}}/edit">
+    <div class="form-group col-md-4 col-md-offset-4">
       {{#if user.fb.firstName}}
         <h4 id="user-email">Email: {{user.fb.email}}</h4>
       {{else if user.google.displayName}}
         <h4 id="user-email">Email: {{user.google.email}}</h4>
       {{/if}}
     </div><br>
-    <div class="form-group col-md-4 form-centered">
+    <div class="form-group col-md-4 col-md-offset-4">
       <textarea class="form-control" id="user-about" name="about" type="text" value="{{user.about}}" placeholder="write something about yourself">{{user.about}}</textarea>
     </div><br>
-    <div class="form-group col-md-4 form-centered">
+    <div class="form-group col-md-4 col-md-offset-4">
       <input class="form-control" id="user-picture" name="picture" type="text" value="{{user.picture}}" placeholder="image URL" />
     </div><br>
-    {{!-- <div class="form-group col-md-4 form-centered">
+    {{!-- <div class="form-group col-md-4 col-md-offset-4">
       <input class="form-control" id="user-favorites" name="favorites" type="text" value="{{user.favorites}}" placeholder="favorites" />
     </div><br> --}}
-    <div class="form-group col-md-4 form-centered">
-      <input class="btn btn-primary col-md-12" type="submit" value="UPDATE PROFILE" />
+    <div class="form-group col-md-4 col-md-offset-4">
+      <input class="btn btn-bottom" type="submit" value="UPDATE PROFILE" />
     </div><br>
   </form>
 
-  <form class="container center" id="delete-user-form" method="POST" action="/users/{{user._id}}/edit/?_method=DELETE">
-    <div class="form-group col-md-4 form-centered">
-      <input class="btn btn-primary col-md-12" type="submit" value="DELETE PROFILE" />
+  <form class="container text-center" id="delete-user-form" method="POST" action="/users/{{user._id}}/edit/?_method=DELETE">
+    <div class="form-group col-md-4 col-md-offset-4">
+      <input class="btn btn-bottom" type="submit" value="DELETE PROFILE" />
     </div>
   </form>
