@@ -23,7 +23,7 @@ var UserSchema = new Schema ({
     about: String,
     picture: String,
     favorites: [{
-      type: Schema.Type.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: 'Team'
     }]
 });
