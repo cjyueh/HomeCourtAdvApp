@@ -45,6 +45,12 @@ body {
 	width:800px;
 	height:500px;
 }
+
+/*.info_content {
+	width: 300px;
+	height: 200px;
+}*/
+
 .col-centered{
     float: none;
     margin: 0 auto;

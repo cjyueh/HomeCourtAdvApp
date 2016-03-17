@@ -10,7 +10,10 @@ function getBarInfo () {
   var teamObjArray = []
 
   // google stuff
-  var infowindow = new google.maps.InfoWindow();
+  var infowindow = new google.maps.InfoWindow({
+    maxWidth: 300
+  });
+
   var service = new google.maps.places.PlacesService(map);
 
   // var teamObjArray = [];
@@ -32,14 +35,15 @@ function getBarInfo () {
       // render each bar as pin on map
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, long),
+        animation: google.maps.Animation.DROP,
         map: map,
         // title: barName
       });
 
       function renderBarInfo (marker, name) {
         google.maps.event.addListener(marker, 'click', function(e) {
-            infowindow.setContent(name);
             infowindow.open(map, marker);
+            infowindow.setContent("<div style='width:300px;height:90px;'>"+ name + '   ' + address + '   ' + pic + "</div>");
         });
       }
       renderBarInfo(marker, name);
