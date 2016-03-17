@@ -4,6 +4,7 @@ var Schema =  mongoose.Schema;
 var BarSchema = new Schema({
   name: String,
   address: String,
+  pic: String,
   city: String,
   state: String,
   lat: Number,

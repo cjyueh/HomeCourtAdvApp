@@ -26,6 +26,8 @@ function getBarInfo () {
       var name = teamObjArray[i].name;
       var lat = teamObjArray[i].lat;
       var long = teamObjArray[i].long;
+      var address = teamObjArray[i].address;
+      var pic = teamObjArray[i].pic;
 
       // render each bar as pin on map
       var marker = new google.maps.Marker({
@@ -39,11 +41,11 @@ function getBarInfo () {
             infowindow.setContent(name);
             infowindow.open(map, marker);
         });
-      } 
+      }
       renderBarInfo(marker, name);
     }
 
-  }) //end ajax 
+  }) //end ajax
 }
 
 function createMap(){
@@ -56,5 +58,3 @@ function createMap(){
 getBarInfo();
 
 createMap();
-
-
