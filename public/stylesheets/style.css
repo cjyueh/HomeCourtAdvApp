@@ -20,7 +20,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 1000px;
+	height: 625px;
 	text-align: center;
 	color: white;
 }
@@ -33,6 +33,14 @@ body {
 	display: inline-block;
 	float: none;
 	text-align: left;
+}
+
+#site-description {
+	background-color: rgba(1,1,1,.25);
+	color: #ffffff;
+	margin-top: 200px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 /*google maps styling*/
@@ -63,4 +71,13 @@ body {
 
 .user-avatar {
 	height: 15px;
+}
+
+.footer {
+	background-color: #303030;
+	bottom: 0;
+	color: #9d9d9d;
+	height: 40px;
+	position: fixed;
+	width: 100%;
 }
