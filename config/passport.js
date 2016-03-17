@@ -7,7 +7,7 @@ var OAuth = require('../secrets');
 passport.use('facebook', new FacebookStrategy({
   clientID        : OAuth.fb.clientID,
   clientSecret    : OAuth.fb.clientSecret,
-  callbackURL     : 'http://localhost:3000/auth/facebook/callback',
+  callbackURL     : 'https://home-court-advantage.herokuapp.com/auth/facebook/callback',
   enableProof     : true,
   profileFields   : ['name', 'emails']
 }, function(access_token, refresh_token, profile, done) {
