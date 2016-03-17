@@ -10,7 +10,7 @@ var favEndPoint = '/teams/api/' + teamId + '/user';
 $favBtn.on('click', function(e){
   e.preventDefault();
   $.ajax({
-    type: "POST",
+    type: "PUT",
     // contentType: "application/json; charset=utf-8",
     url: favEndPoint,
     data: {favorite: teamId},
