@@ -8,7 +8,8 @@ var BarSchema = new Schema({
   city: String,
   state: String,
   lat: Number,
-  long: Number
+  long: Number,
+  yelp: String
 });
 
 var Bar = mongoose.model('Bar', BarSchema);

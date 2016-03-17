@@ -21,7 +21,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.800047,
-      long: -122.439743
+      long: -122.439743,
+      yelp: "http://www.yelp.com/biz/monaghans-san-francisco-2"
       // teams: [teams[0]._id]
     },
     {
@@ -31,7 +32,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.74375,
-      long: -122.42459
+      long: -122.42459,
+      yelp: "http://www.yelp.com/biz/dolores-corner-san-francisco"
       // teams: [teams[1]._id,
       //         teams[2]._id]
     },
@@ -42,7 +44,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.772308,
-      long: -122.430964
+      long: -122.430964,
+      yelp: "http://www.yelp.com/biz/mad-dog-in-the-fog-san-francisco"
     },
     {
       name: "Greens Sports Bar",
@@ -51,7 +54,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.797566,
-      long: -122.422394
+      long: -122.422394,
+      yelp: "http://www.yelp.com/biz/the-greens-sports-bar-san-francisco"
     },
     {
       name: "Jackalope",
@@ -60,7 +64,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.787016,
-      long: -122.419744
+      long: -122.419744,
+      yelp: "http://www.yelp.com/biz/jackalope-san-francisco"
     },
     {
       name: "Ted's Sports Bar and Grill",
@@ -69,7 +74,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.775271,
-      long: -122.402914
+      long: -122.402914,
+      yelp: "http://www.yelp.com/biz/teds-sports-bar-and-grill-san-francisco"
     },
     {
       name: "Ace's",
@@ -78,7 +84,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.788426,
-      long: -122.416784
+      long: -122.416784,
+      yelp: "http://www.yelp.com/biz/aces-san-francisco"
     },
     {
       name: "Pete's Tavern",
@@ -87,7 +94,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.779502,
-      long: -122.390708
+      long: -122.390708,
+      yelp: "http://www.yelp.com/biz/petes-tavern-san-francisco"
     },
     {
       name: "Danny Coyle's",
@@ -96,7 +104,8 @@ Team.remove({}, function(err){
       city: "San Francisco",
       state: "CA",
       lat: 37.771965,
-      long: -122.433312
+      long: -122.433312,
+      yelp: "http://www.yelp.com/biz/danny-coyles-san-francisco"
     }
   ];
 
@@ -116,7 +125,7 @@ Bar.create(bars, function(err, bars){
     var aces = bars[6]._id;
     var petes = bars[7]._id;
     var dannyCoyles = bars[8]._id;
-    
+
     console.log("created: ", bars)
 
     var teams = [
