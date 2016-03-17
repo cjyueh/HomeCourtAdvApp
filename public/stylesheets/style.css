@@ -43,6 +43,28 @@ ul {
 	border-color: #9d9d9d;
 }
 
+hr {
+	border-color: #9d9d9d;
+}
+
+#team-info-col {
+	top: 50px;
+}
+
+#star {
+	color: #9d9d9d;
+	width: 30px;
+	padding: 10px;
+}
+
+.glyphicon-star-empty {
+	color: #303030;
+}
+
+#bar-map-col {
+	top: 50px;
+}
+
 /*--- GOOGLE MAPS STYLING ---*/
 
 #bars-explain {
@@ -51,9 +73,9 @@ ul {
 
 #map {
 	border: 1px solid #9d9d9d;
-	width:800px;
+	width:750px;
 	height:500px;
-	margin-bottom: 40px;
+	/*margin-bottom: 40px;*/
 }
 
 .g-pic {
@@ -92,9 +114,22 @@ ul {
 }
 /*---------------------------*/
 
+/*---------- FORMS ----------*/
 #user-about {
 	height: 200px;
 }
+
+.form-control {
+	border-color: #9d9d9d;
+	border-radius: 0;
+}
+
+.form-control:focus {
+	border-color: #9d9d9d;
+	box-shadow: 0 0 5px rgba(255,181,0,.5);
+}
+
+/*---------------------------*/
 
 /*------- PAGE FOOTER -------*/
 .footer {
