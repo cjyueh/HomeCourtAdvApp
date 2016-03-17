@@ -9,20 +9,6 @@ var usersController = {
     } else {
       res.redirect("/users/new");
     }
-    // if(user){ // check if user is logged in
-    //   if(user.fb) { //check if user was logged in through facebook
-    //     // res.render('index', {user: user.fb, userID: user._id});
-    //     next();
-    //
-    //   }else if(user.google) {
-    //     // res.render('index', {user: user.google});
-    //     next();
-    //
-    //   }
-    // }else {
-    //   // res.render('index', {user: req.user});
-    //   next();
-    // }
   },
 
   index: function (req, res) {
