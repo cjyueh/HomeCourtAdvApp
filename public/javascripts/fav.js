@@ -1,5 +1,6 @@
 // get fav btn
 var $favBtn = $('#fav');
+var $star = $('#star');
 
 var pathname = window.location.pathname;
 var splitUrl = pathname.split('/');
@@ -17,7 +18,9 @@ $favBtn.on('click', function(e){
     dataType: "json",
     success: function (msg) {
       // console.log("this is the data: ",);
-      $favBtn.addClass('btn btn-success')
+      // $favBtn.addClass('btn btn-success');
+      $star.removeClass('glyphicon-star-empty');
+      $star.addClass('glyphicon-star');
     },
     error: function (err){
         console.log("error: ", err);

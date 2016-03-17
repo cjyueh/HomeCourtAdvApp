@@ -1,7 +1,12 @@
 var mongoose = require('mongoose'),
         conn = mongoose.connect('mongodb://localhost/HCA-app'),
-        Bar = require("../models/bar");
+        Bar = require("../models/bar"),
         Team = require("../models/team"),
+        User = require("../models/user");
+
+User.remove({}, function(err){
+  if (err) console.log("ERROR: ", err);
+});
 
 Bar.remove({}, function(err){
   if (err) console.log("ERROR: ", err);
