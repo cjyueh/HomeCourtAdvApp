@@ -32,5 +32,5 @@ Please feel free to contribute to our project. Fork and clone our repo and submi
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used when we Googled solutions
-* GA26
+* GA WDI26
 * etc
