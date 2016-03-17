@@ -5,20 +5,6 @@ var User = require('../models/user');
 var teamsController = {
   indexTeams: function (req, res) {
     Team.find({}, function (err, teams){
-      // err ? console.log(err) : res.status(200).send(JSON.stringify(teams));
-
-      // err ? console.log(err) : res.status(200).send(JSON.stringify(teams));
-      // console.log("Here are the teams:",teams);
-      // if(user){ // check if user is logged in
-      //   if(user.fb) { //check if user was logged in through facebook
-      //     // res.render('index', {user: user.fb, userID: user._id});
-      //     err ? console.log(err) : res.render('index', {user: user.fb, userID: user._id,teams: teams});
-      //   }else if(user.google) {
-      //     // res.render('index', {user: user.google});
-      //   }
-      // }else {
-      //   err ? console.log(err) : res.render('index', {teams: teams});
-      // }
         err ? console.log(err) : res.render('index', {user: req.user, teams: teams});
     });
   },
@@ -27,7 +13,6 @@ var teamsController = {
     var id = req.params.id;
     // req.session.userId
     console.log("this is the user: ", req.user);
-    console.log("this is the users favorites: ", req.user.favorites);
 
     Team.findById({_id: id}, function(err, team){
       err ? console.log(err) : res.render('teams/show', {user: req.user,team: team});
@@ -39,9 +24,7 @@ var teamsController = {
     var barIdArray = [];
 
     Team.findById({_id: id}, function(err, team){
-      if (err) {
-        console.log(err);
-      }
+      if (err) { console.log(err) }
       else {
         for (var i = 0; i < team.bars.length; i++) {
           barIdArray.push(team.bars[i]); 
@@ -59,13 +42,26 @@ var teamsController = {
     })
   },
   userFav: function(req, res) {
-    var teamId = req.params.id
+    // get team id from url
+    var teamId = req.body.favorite
+    console.log("this is the teamid: ", teamId);
+    // get user id from session
     var userId = req.user._id
+    // find user in db
+    // update user favs with team id
 
-    User.findOneAndUpdate({_id: userId, favorites: teamId}, function(err, user){
-        // user.favorites.push(teamId)
-        console.log(user.favorites)
+    User.findById({_id: userId}, function(err,user){
+      // res.send(user);
+      console.log(user);
+      user.favorites = teamId
+
+      user.save(function(err, user){
+        console.log(user);
+        // is ajax expecting to get somethign back?
         res.send(user);
+        // res.redirect('/users/' + userId);
+      })
+
     })
 
   }
