@@ -22,7 +22,10 @@ var UserSchema = new Schema ({
     email: String,
     about: String,
     picture: String,
-    favorites: String
+    favorites: [{
+      type: Schema.Type.ObjectId,
+      ref: 'Team'
+    }]
 });
 
 var User = mongoose.model('User', UserSchema);
