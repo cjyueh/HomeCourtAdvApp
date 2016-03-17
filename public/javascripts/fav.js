@@ -7,19 +7,6 @@ var teamId = splitUrl[2];
 
 var favEndPoint = '/teams/api/' + teamId + '/user';
 
-// $favBtn.on('click', function(e){
-//   e.preventDefault();
-//   // make ajax req onClick
-//   $.post(favEndPoint, {favorite: teamId}, function(data){
-    
-//     // hits route, controller adds fav
-//     // do anythign with data?
-//     // change star color
-//     console.log("this is the data: ", data);
-//     $favBtn.addClass('btn btn-success')
-//   })
-// })
-
 $favBtn.on('click', function(e){
   e.preventDefault();
   $.ajax({
