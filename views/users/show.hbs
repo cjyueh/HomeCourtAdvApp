@@ -1,18 +1,27 @@
-<div class="page-header center">
-	<h1><img id="profile-pic" src="{{user.picture}}" />
+<div class="page-header text-center">
+	<h1><img id="user-pic" src="{{user.picture}}" />
 	{{#if user.fb.firstName}}
-		Hello, {{user.fb.firstName}}</h1>
+		 Hello, {{user.fb.firstName}}</h1>
 	{{else if user.google.displayName}}
-		<h1>Hello, {{user.google.displayName}}</h1>
+		 Hello, {{user.google.displayName}}</h1>
 		{{!-- <h1>Hello, {{user.google.name.givenName}}</h1> --}}
 	{{/if}}
 </div>
 
-<div class="container" >
-	<label>About:</label> <p>{{user.about}}</p>
+<div class="container col-md-4 col-md-offset-4" >
+	<h4>About:</h4>
+	<ul>
+		<li>{{user.about}}</li>
+	</ul>
+	{{#if user.favorites}}
+		<h4>Favorite Teams:</h4>
+		<ul>
+			<li>{{user.favorites}}</li>
+		</ul>
+	{{/if}}
 	<form id="edit-user-btn" method="GET" action="/users/{{user._id}}/edit">
-	  <div class="form-group col-md-4 form-centered">
-	    <input class="btn btn-primary col-md-12" type="submit" value="EDIT or DELETE PROFILE" />
+	  <div class="form-group text-center">
+	    <input class="btn btn-bottom" type="submit" value="EDIT or DELETE PROFILE" />
 	  </div>
 	</form>
 </div>
