@@ -40,13 +40,13 @@ function getBarInfo () {
         // title: barName
       });
 
-      function renderBarInfo (marker, name) {
+      function renderBarInfo (marker, name, address, pic) {
         google.maps.event.addListener(marker, 'click', function(e) {
             infowindow.open(map, marker);
-            infowindow.setContent("<div style='width:300px;height:90px;'>"+ name + '   ' + address + '   ' + pic + "</div>");
+            infowindow.setContent("<div style='width:180px;height:150px;'>"+ name + '<br>' + address + '<br>' + "<img class='g-pic' src=" + pic + "></div>");
         });
       }
-      renderBarInfo(marker, name);
+      renderBarInfo(marker, name, address, pic);
     }
 
   }) //end ajax
