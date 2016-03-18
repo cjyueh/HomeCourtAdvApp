@@ -23,12 +23,20 @@ router.route('/')
   .get(teamsController.indexTeams);
 
 // TEAM routes
-router.route('/teams/:id')
-  .get(teamsController.showTeam)
-  .get(eventsController.indexEvents);
+router.route('/teams/api')
+  .get(teamsController.teamsNav);
 
-// router.route('/teams')
-//   .get(teamsController.index);
+router.route('/teams/:id')
+  // having problem making two GET reqs
+  .get(teamsController.showTeam);
+
+
+router.route('/teams/api/:id')
+  .get(teamsController.teamApi);
+
+// ajax route for user to fav a team
+router.route('/teams/api/:id/user')
+  .put(teamsController.userFav);
 
 // USER routes // signup could just be edit
 router.route('/users')

@@ -1,23 +1,36 @@
-<div class="page-header center">
-	<h1><img src="{{team.logo}}" />{{team.origin}} {{team.name}}</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 text-center" id="team-info-col">
+			<h1><img src="{{team.logo}}" />{{team.origin}} {{team.name}}</h1>
+			<hr>
+			<!-- trying to show events through teams -->
+			{{#if user.favorites.teams._id}}
+				<h4>You like the {{team.name}}<span class="glyphicon glyphicon-star"></span></h4>
+			{{else}}
+				<h4>Favorite this team: <a href="#" id="fav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-star-empty" id="star"></span></a></h4>
+			{{/if}}
+		</div>
+
+		<div class="col-sm-8" id="bar-map-col">
+			<h3 id="bars-explain">Bars showing the game:</h3>
+		  <div id="map" >
+		  	{{!-- map is rendered here--}}
+		  </div>
+		</div>
+	</div>
 </div>
+
+
 <!-- trying to show events through teams -->
+	{{!-- <button type="button" class="btn btn-primary" id="fav"> Add Team To Favorites</button> --}}
 
-<div>
-  <h1 id="bars-explain">Map of bars showing your game:</h1>
-</div>
+  {{!-- <form method="GET" action="/teams/api/:id/user">
+    <div class="form-group col-md-4">
+      <input class="btn btn-primary col-md-12" type="submit" value="Favorite This Team">
+    </div>
+  </form> --}}
 
-<div id="bar-info-test">
-  
-</div>
+	{{!-- call js file --}}
+	<script type="text/javascript" src="/javascripts/maps.js"> </script>
 
-
-<br>
-
-<div id="map" class="col-centered">
-  {{!-- map is rendered here--}}
-</div>
-
-{{!-- call js file --}}
-<script type="text/javascript" src="/javascripts/maps.js">
-</script>
+	<script type="text/javascript" src="/javascripts/fav.js"> </script>

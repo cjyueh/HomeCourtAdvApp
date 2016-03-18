@@ -4,14 +4,12 @@ var Schema =  mongoose.Schema;
 var BarSchema = new Schema({
   name: String,
   address: String,
+  pic: String,
   city: String,
   state: String,
   lat: Number,
   long: Number,
-  teams: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Team'
-  }]
+  yelp: String
 });
 
 var Bar = mongoose.model('Bar', BarSchema);

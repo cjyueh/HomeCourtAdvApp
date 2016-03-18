@@ -5,7 +5,8 @@ var REPL = require("repl");
 var repl = REPL.start("> ");
 
 // model requirements
-repl.context.Album = require("../models/team");
+repl.context.Team = require("../models/team");
+repl.context.User = require("../models/User");
 
 // listen for an `exit` event
 repl.on("exit", function () {

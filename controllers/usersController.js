@@ -9,20 +9,6 @@ var usersController = {
     } else {
       res.redirect("/users/new");
     }
-    // if(user){ // check if user is logged in
-    //   if(user.fb) { //check if user was logged in through facebook
-    //     // res.render('index', {user: user.fb, userID: user._id});
-    //     next();
-    //
-    //   }else if(user.google) {
-    //     // res.render('index', {user: user.google});
-    //     next();
-    //
-    //   }
-    // }else {
-    //   // res.render('index', {user: req.user});
-    //   next();
-    // }
   },
 
   index: function (req, res) {
@@ -32,7 +18,9 @@ var usersController = {
   },
   showUser: function (req, res) {
     var id = req.params.id;
+    console.log(id);
     User.findById({_id: id}, function(err, user){
+      console.log({user: user});
       // err ? console.log(err) : res.json({user});
       err ? console.log(err) : res.render('users/show', {user: user});
     });
@@ -78,7 +66,7 @@ var usersController = {
       // this needs to save...
       user.save(function(err, data){
         console.log(err);
-        res.redirect('/users');
+        res.redirect('/users/'+ id);
       });
     });
   },

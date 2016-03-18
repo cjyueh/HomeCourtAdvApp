@@ -1,7 +1,7 @@
 var User = require('../models/user');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var OAuth = require('../secrets');
 
 passport.use('facebook', new FacebookStrategy({
@@ -20,6 +20,7 @@ passport.use('facebook', new FacebookStrategy({
     User.findOne({ 'fb.id' : profile.id }, function(err, user) {
       if (err) return done(err);
       if (user) {
+        console.log(user);
         return done(null, user);
       } else {
 
@@ -45,25 +46,28 @@ passport.use('facebook', new FacebookStrategy({
 passport.use(new GoogleStrategy({
   clientID        : OAuth.google.clientID,
   clientSecret    : OAuth.google.clientSecret,
-  callbackURL     : OAuth.google.callbackURL
+  callbackURL     : OAuth.google.callbackURL,
+  enableProof     : true,
+  profileFields   : ['name', 'emails']
 },
   function(access_token, refresh_token, profile, done) {
-      // console.log(profile);
+      // console.log(profile.displayName);
     process.nextTick(function(){
 
       // debugger;
-      User.findOne({'google.id': profile.id}, function (err, user) {
-        // console.log(profile.id);
+      User.findOne({ 'google.id' : profile.id}, function (err, user) {
+        console.log(profile);
         if (err)
           return done (err);
         if (user) {
+          console.log(user);
           return done(null, user);
         }  else {
           var newUser = new User();
           console.log("New User ", newUser);
           newUser.google.id = profile.id;
           newUser.google.access_token = access_token;
-          newUser.google.name = profile.displayName;
+          newUser.google.displayName = profile.displayName;
           newUser.google.email = profile.emails[0].value;
 
           newUser.save(function(err) {

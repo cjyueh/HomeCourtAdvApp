@@ -44,6 +44,25 @@ app.use(express.static(path .join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
 
+// persist user login info 
+/*
+var User = require('./models/user');
+app.use(function(req, res, next) {
+  req.login = function(user) {
+    var req.session.userId = user._id;
+  };
+
+  req.currentUser = function (cb) {
+    User.findOne({_id: req.session.userId}, function(err, data){
+        req.user = data;
+        cb(null, data)
+      });
+  };
+
+  req.currentUser(next);
+})
+*/
+
 app.use(routes);
 // app.use('/users', users);
 app.get('/auth/facebook', passport.facebookAuthenticate);

@@ -15,14 +15,17 @@ var UserSchema = new Schema ({
   google: {
     id: String,
     access_token: String,
-    firstName: String,
-    lastName: String,
+    displayName: String,
+    givenName: String,
     email: String
   },
     email: String,
     about: String,
     picture: String,
-    favorites: String
+    favorites: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Team'
+    }]
 });
 
 var User = mongoose.model('User', UserSchema);

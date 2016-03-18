@@ -1,39 +1,143 @@
 body {
 	font-family: 'Oswald', sans-serif;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
+.fb-login {
+	max-height: : 30px;
+	float: right;
+}
+
+.goog-login {
+	max-height: 32px;
+	float: right;
+
+}
+
+/*-------------------- INDEX PAGE ------------------*/
 .jumbotron {
-	/*background: url("/images/sports-fans-2.jpg") no-repeat center center fixed;*/
-	background: url("http://www.legendssportsbar.com/wp-content/uploads/2014/02/Legends-Sports-Bar-The-First-Modern-Sports-Bar-in-America.jpg") no-repeat center center fixed;
+	background: url("/images/sports-bar.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 1000px;
-}
-
-.center {
+	height: 650px;
 	text-align: center;
+	color: white;
 }
 
-.form-centered {
-	display: inline-block;
-	float: none;
-	text-align: left;
+#site-description {
+	background-color: rgba(1,1,1,.25);
+	color: #ffffff;
+	margin-top: 200px;
+	padding-left: 0;
+	padding-right: 0;
+}
+/*--------------------------------------------------*/
+
+ul {
+	list-style-type: none;
 }
 
-/*google maps styling*/
+.page-header {
+	border-color: #9d9d9d;
+}
+
+hr {
+	border-color: #9d9d9d;
+}
+
+#team-info-col {
+	top: 50px;
+}
+
+#star {
+	color: #9d9d9d;
+	width: 30px;
+	padding: 10px;
+}
+
+.glyphicon-star-empty {
+	color: #303030;
+}
+
+#bar-map-col {
+	top: 50px;
+}
+
+/*--- GOOGLE MAPS STYLING ---*/
 
 #bars-explain {
 	text-align: center;
 }
 
 #map {
-	width:800px;
+	border: 1px solid #9d9d9d;
+	width:750px;
 	height:500px;
+	/*margin-bottom: 40px;*/
 }
-.col-centered{
-    float: none;
-    margin: 0 auto;
+
+.g-pic {
+	height: 100px;	
 }
+/*---------------------------*/
+
+/*--- USER PROFILE PICTURE ---*/
+#user-pic {
+	width: 200px;
+}
+
+.user-avatar {
+	/*height: 15px;*/
+	max-height:30px;
+  width:auto;
+  vertical-align:middle;
+}
+/*---------------------------*/
+
+/*--------- BUTTONS ---------*/
+.btn {
+	background-color: #303030;
+	/*border: 1px solid #9d9d9d;*/
+	border-radius: 0;
+	color: #9d9d9d;
+	display: inline-block;
+}
+
+.btn:hover {
+	color: white;
+}
+
+.btn-bottom {
+	/*trying to position edit & delete user buttons near bottom of page*/
+}
+/*---------------------------*/
+
+/*---------- FORMS ----------*/
+#user-about {
+	height: 200px;
+}
+
+.form-control {
+	border-color: #9d9d9d;
+	border-radius: 0;
+}
+
+.form-control:focus {
+	border-color: #9d9d9d;
+	box-shadow: 0 0 5px rgba(255,181,0,.5);
+}
+
+/*---------------------------*/
+
+/*------- PAGE FOOTER -------*/
+.footer {
+	background-color: #303030;
+	bottom: 0;
+	color: #9d9d9d;
+	height: 30px;
+	position: fixed;
+	width: 100%;
+}
+/*---------------------------*/

@@ -5,7 +5,11 @@ var TeamSchema = new Schema ({
   name: String,
   league: String,
   origin: String,
-  logo: String
+  logo: String,
+  bars: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Bar'
+  }]
 });
 
 var Team = mongoose.model('Team', TeamSchema);
