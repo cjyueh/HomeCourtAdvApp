@@ -2,16 +2,11 @@
 var $favBtn = $('#fav');
 var $star = $('#star');
 
-// get unfav (trash) btn
-var $trash = $('#trash');
-
 var pathname = window.location.pathname;
 var splitUrl = pathname.split('/');
 var teamId = splitUrl[2];
 
 var favEndPoint = '/teams/api/' + teamId + '/user';
-
-
 
 $favBtn.on('click', function(e){
   e.preventDefault();

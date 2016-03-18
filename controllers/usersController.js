@@ -32,7 +32,6 @@ var usersController = {
           // res.json(team[i].name)
           teamFavsArray.push(team[i].name);
           console.log("THESE ARE THE TEAM NAMES:", teamFavsArray)
-          // var bullName = team[0].name;
         }
           err ? console.log(err) : res.render('users/show', {user: user, team: teamFavsArray} );
       })
