@@ -22,8 +22,6 @@ var usersController = {
     console.log(id);
     User.findById({_id: id}, function(err, user){
       console.log({user: user});
-      // err ? console.log(err) : res.json({user});
-      // err ? console.log(err) : res.render('users/show', {user: user});
       console.log("USER FAVS:", user.favorites);
       var teamFavsArray = [];
       Team.find({_id: {$in: user.favorites}}, function(err, team){
@@ -36,11 +34,6 @@ var usersController = {
           err ? console.log(err) : res.render('users/show', {user: user, team: teamFavsArray} );
       })
     });
-
-    // Team.find({}, function(err, teams){
-    //   res.send({teams})
-    // })
-
   },
   signUp: function(req, res) {
     res.render('users/user-new-form');
@@ -49,7 +42,6 @@ var usersController = {
     var about = req.body.about;
     var picture = req.body.picture;
     var favorites = req.body.favorites;
-    // var id = req.params.id;
     User.create({about: about, picture: picture, favorites: favorites},
     function (err, data) {
       if (err) {
@@ -80,7 +72,7 @@ var usersController = {
       if (picture) user.picture = picture;
       if (favorites) user.favorites = favorites;
       console.log("user stuff here!:", user);
-      // this needs to save...
+      // save changes
       user.save(function(err, data){
         console.log(err);
         res.redirect('/users/'+ id);
@@ -95,7 +87,5 @@ var usersController = {
     });
   }
 };
-
-
 
 module.exports = usersController;

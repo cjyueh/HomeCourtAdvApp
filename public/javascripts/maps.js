@@ -36,6 +36,8 @@ function getBarInfo () {
   // var teamObjArray = [];
 
   $.getJSON(teamEndpoint, function(data){
+    
+
     var teams = data
     for (var team in data ){
         teamObjArray.push(data[team]);

@@ -12,7 +12,6 @@ var teamsController = {
   showTeam: function(req,res) {
     var id = req.params.id;
     // req.session.userId
-    // console.log("this is the user: ", req.user.favorites);
     Team.findById({_id: id}, function(err, team){
       console.log("here is the user:", req.user);
       console.log("TEAM here:", team);
@@ -56,24 +55,17 @@ var teamsController = {
     var userId = req.user._id;
     // find user in db
     // update user favs with team id
-
     User.findById({_id: userId}, function(err,user){
-      // res.send(user);
-      console.log(user);
+      // dont save duplicate teams to favs
       if (user.favorites.indexOf(teamId) === -1 ) {
+        // push team id to user.fav
         user.favorites.push(teamId);
       }
 
       user.save(function(err, user){
         console.log(user);
-        // is ajax expecting to get somethign back?
         res.send(user);
-        // res.redirect('/users/' + userId);
       });
-      // user.update({_id: userId}, {$push: {favorites: teamId} }, function(err, user){
-      //   console.log(user);
-      //   res.send(user);
-      // })
 
     });
   }

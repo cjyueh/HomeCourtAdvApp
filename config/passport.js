@@ -91,16 +91,12 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-// console.log(passport);
-
-
-
 module.exports.facebookAuthenticate = passport.authenticate('facebook', { scope: 'email'} );
 module.exports.facebookCallback = passport.authenticate('facebook', {
   successRedirect: '/',
   failureRedirect: '/'
 }), function(req, res) {
-  // console.log('HERE');
+
 };
 
 module.exports.googleAuthenticate = passport.authenticate('google', { scope: 'email'} );
