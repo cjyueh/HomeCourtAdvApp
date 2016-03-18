@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
         conn = mongoose.connect('mongodb://localhost/HCA-app'),
-        Bar = require("../models/bar"),
+         Bar = require("../models/bar"),
         Team = require("../models/team"),
         User = require("../models/user");
 

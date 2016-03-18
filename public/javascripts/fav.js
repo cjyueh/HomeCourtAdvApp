@@ -2,6 +2,9 @@
 var $favBtn = $('#fav');
 var $star = $('#star');
 
+// get unfav (trash) btn
+var $trash = $('#trash');
+
 var pathname = window.location.pathname;
 var splitUrl = pathname.split('/');
 var teamId = splitUrl[2];
@@ -21,9 +24,11 @@ $favBtn.on('click', function(e){
       // $favBtn.addClass('btn btn-success');
       $star.removeClass('glyphicon-star-empty');
       $star.addClass('glyphicon-star');
+
     },
     error: function (err){
         console.log("error: ", err);
     }
   });
 });
+

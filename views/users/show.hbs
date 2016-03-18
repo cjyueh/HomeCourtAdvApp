@@ -1,10 +1,14 @@
 <div class="page-header text-center">
-	<h1><img id="user-pic" src="{{user.picture}}" />
+	{{#if user.picture}}
+		<h2><img class="user-pic" src="{{user.picture}}" />
+	{{else}}
+		<h2><img class="user-pic" src="http://vansgb.com/van-hire/wp-content/uploads/profile_placeholder-240x280.png" />
+	{{/if}}
 	{{#if user.fb.firstName}}
-		 Hello, {{user.fb.firstName}}</h1>
+		 Hello, {{user.fb.firstName}}</h2>
 	{{else if user.google.displayName}}
-		 Hello, {{user.google.displayName}}</h1>
-		{{!-- <h1>Hello, {{user.google.name.givenName}}</h1> --}}
+		 Hello, {{user.google.displayName}}</h2>
+		{{!-- <h2>Hello, {{user.google.name.givenName}}</h2> --}}
 	{{/if}}
 </div>
 
@@ -15,8 +19,10 @@
 	</ul>
 	{{#if user.favorites}}
 		<h4>Favorite Teams:</h4>
-		<ul>
-			<li>{{user.favorites}}</li>
+		<ul id="user-favs">
+			{{#each team}}
+				<li>{{this}} <a href="#" id="trash" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-trash"></span></a></li>
+			{{/each}}
 		</ul>
 	{{/if}}
 	<form id="edit-user-btn" method="GET" action="/users/{{user._id}}/edit">

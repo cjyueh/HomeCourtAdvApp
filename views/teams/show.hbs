@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4 text-center" id="team-info-col">
-			<h1><img src="{{team.logo}}" />{{team.origin}} {{team.name}}</h1>
+			<h2><img src="{{team.logo}}" />{{team.origin}} {{team.name}}</h2>
 			<hr>
 			<!-- trying to show events through teams -->
 			{{#if user.favorites.teams._id}}
@@ -12,7 +12,7 @@
 		</div>
 
 		<div class="col-sm-8" id="bar-map-col">
-			<h3 id="bars-explain">Bars showing the game:</h3>
+			<h4>Bars showing the game:</h4>
 		  <div id="map" >
 		  	{{!-- map is rendered here--}}
 		  </div>

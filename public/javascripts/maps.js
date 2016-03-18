@@ -61,7 +61,7 @@ function getBarInfo () {
       function renderBarInfo (marker, name, address, pic) {
         google.maps.event.addListener(marker, 'click', function(e) {
             infowindow.open(map, marker);
-            infowindow.setContent("<div style='width:200px;height:175px;'><h4>"+ name + '</h4><p>' + address + '</p>' + "<a href=" + yelp + " target='_blank'>" + "Website</a>" + '<br>' + "<img class='g-pic' src=" + pic + "></div>");
+            infowindow.setContent("<div style='width:225px;height:200px;'><h4>"+ name + '</h4><p>' + address + '</p>' + "<p><a href=" + yelp + " target='_blank'>" + "Website</a></p>" + "<img class='g-pic' src=" + pic + "></div>");
         });
       }
       renderBarInfo(marker, name, address, pic);
