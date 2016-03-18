@@ -27,7 +27,7 @@ var favEndPoint = '/teams/api/' + teamId + '/user';
       // console.log(data)
     },
     error: function (err){
-        console.log("error: ", err);
+        console.log("error: user not logged in", err);
     }
   });
 });
