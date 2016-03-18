@@ -7,7 +7,6 @@ var methodOverride = require('method-override');
 var teamsController = require('../controllers/teamsController');
 var usersController = require('../controllers/usersController');
 var barsController = require('../controllers/barsController');
-var eventsController = require('../controllers/eventsController');
 
 console.log(teamsController);
 /* GET home page. */
