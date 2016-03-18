@@ -4,7 +4,7 @@
 			<h2><img src="{{team.logo}}" />{{team.origin}} {{team.name}}</h2>
 			<hr>
 			<!-- trying to show events through teams -->
-			{{#if user.favorites.teams._id}}
+			{{#if isFavorited}}
 				<h4>You like the {{team.name}}<span class="glyphicon glyphicon-star"></span></h4>
 			{{else}}
 				<h4>Favorite this team: <a href="#" id="fav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-star-empty" id="star"></span></a></h4>

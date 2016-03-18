@@ -12,10 +12,16 @@ var teamsController = {
   showTeam: function(req,res) {
     var id = req.params.id;
     // req.session.userId
-    console.log("this is the user: ", req.user);
+    // console.log("this is the user: ", req.user.favorites);
 
     Team.findById({_id: id}, function(err, team){
-      err ? console.log(err) : res.render('teams/show', {user: req.user,team: team});
+      console.log("here is the user:", req.user);
+      console.log("TEAM here:", team);
+      if(req.user.favorites.indexOf(team._id) !== -1){
+        var isFavorited = true;
+      }
+      console.log("favorited?", isFavorited);
+      err ? console.log(err) : res.render('teams/show', {user: req.user,team: team, isFavorited: isFavorited});
     });
   },
   teamApi: function(req, res) {
