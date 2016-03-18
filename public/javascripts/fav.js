@@ -8,7 +8,7 @@ var pathname = window.location.pathname;
 var splitUrl = pathname.split('/');
 var teamId = splitUrl[2];
 
-var favEndPoint = '/teams/api/' + teamId + '/user';
+var favEndPoint = '/teams/api/' + teamId + '/userFav';
   e.preventDefault();
   $.ajax({
     type: "PUT",
