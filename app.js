@@ -13,9 +13,6 @@ var expressSession = require('express-session');
 mongoose.connect('mongodb://localhost/HCA-app');
 process.on('exit', function(){mongoose.disconnect();});
 
-var teamsController = require('./controllers/teamsController');
-// var usersController = require('./controllers/usersController');
-
 var routes = require('./config/routes');
 var passport = require('./config/passport.js');
 var passportMid = require('passport');
@@ -44,7 +41,7 @@ app.use(express.static(path .join(__dirname, 'public')));
 
 app.use(methodOverride('_method'));
 
-// persist user login info 
+// create session helper method to persist user login info 
 /*
 var User = require('./models/user');
 app.use(function(req, res, next) {

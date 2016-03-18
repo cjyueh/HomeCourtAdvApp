@@ -3,7 +3,6 @@ var Bar = require('../models/bar');
 var barsController = {
   index: function (req, res) {
     Bar.find({}, function (err, bars){
-      // err ? console.log(err) : res.status(200).send(JSON.stringify(teams));
       err ? console.log(err) : res.json({bars});
     });
   },
@@ -14,7 +13,6 @@ var barsController = {
     });
   }
 };
-
 
 module.exports = barsController;
 

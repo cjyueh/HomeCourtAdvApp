@@ -16,8 +16,6 @@ Team.remove({}, function(err){
   if (err) console.log("ERROR: ", err);
 });
 
-
-
  var bars = [
     {
       name: "Monaghan's",
@@ -150,7 +148,7 @@ Bar.create(bars, function(err, bars){
   if (err) {
     console.log(err)
   } else {
-
+    // name bars for readability
     var monaghans = bars[0]._id;
     var doloresCorner = bars[1]._id;
     var madDog = bars[2]._id;
@@ -165,7 +163,7 @@ Bar.create(bars, function(err, bars){
     var hockeyHaven = bars[11]._id;
 
     console.log("created: ", bars)
-
+    // create teams after bars so they can ref bar ids
     var teams = [
       {
         name: "Bulls",

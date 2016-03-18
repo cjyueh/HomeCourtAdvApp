@@ -12,12 +12,14 @@ var teamsController = {
   showTeam: function(req,res) {
     var id = req.params.id;
     // req.session.userId
-    // console.log("this is the user: ", req.user.favorites);
     Team.findById({_id: id}, function(err, team){
       console.log("here is the user:", req.user);
       console.log("TEAM here:", team);
+      // if user is logged in
       if(req.user) {
+        // check if team has already been favd
         if(req.user.favorites.indexOf(team._id) !== -1){
+          // if true, render full star on view
           var isFavorited = true;
         }
       }
@@ -29,15 +31,17 @@ var teamsController = {
     var id = req.params.id;
     
     var barIdArray = [];
-
+    // find bars referenced in team
     Team.findById({_id: id}, function(err, team){
       if (err) { console.log(err) }
       else {
+        // get bar ids 
         for (var i = 0; i < team.bars.length; i++) {
           barIdArray.push(team.bars[i]); 
         }
-
+        // search each bar id at same time in db to get full bar info
         Bar.find({_id: {$in: barIdArray }}, function(err, bar) {
+          // send bar details to ajax to render
           res.json(bar);
         });
       }
@@ -49,31 +53,24 @@ var teamsController = {
     });
   },
   userFav: function(req, res) {
-    // get team id from url
+    // get team id from url 
     var teamId = req.body.favorite;
     console.log("this is the teamid: ", teamId);
     // get user id from session
     var userId = req.user._id;
     // find user in db
     // update user favs with team id
-
     User.findById({_id: userId}, function(err,user){
-      // res.send(user);
-      console.log(user);
+      // dont save duplicate teams to favs
       if (user.favorites.indexOf(teamId) === -1 ) {
+        // push team id to user.fav
         user.favorites.push(teamId);
       }
 
       user.save(function(err, user){
         console.log(user);
-        // is ajax expecting to get somethign back?
         res.send(user);
-        // res.redirect('/users/' + userId);
       });
-      // user.update({_id: userId}, {$push: {favorites: teamId} }, function(err, user){
-      //   console.log(user);
-      //   res.send(user);
-      // })
 
     });
   }
