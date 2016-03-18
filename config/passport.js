@@ -51,7 +51,7 @@ passport.use(new GoogleStrategy({
   clientID        : ENV['GOOGLE_CLIENT'],
   // clientSecret    : OAuth.google.clientSecret,
   clientSecret    : ENV['GOOGLE_SECRET'],
-  callbackURL     : OAuth.google.callbackURL,
+  callbackURL     : 'http://home-court-advantage.herokuapp.com/oauth2callback',
   enableProof     : true,
   profileFields   : ['name', 'emails']
 },
