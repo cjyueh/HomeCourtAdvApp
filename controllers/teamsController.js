@@ -15,7 +15,9 @@ var teamsController = {
     Team.findById({_id: id}, function(err, team){
       console.log("here is the user:", req.user);
       console.log("TEAM here:", team);
+      // if user is logged in
       if(req.user) {
+        // check if team has already been favd
         if(req.user.favorites.indexOf(team._id) !== -1){
           var isFavorited = true;
         }
