@@ -50,7 +50,7 @@ passport.use(new GoogleStrategy({
   // clientID        : OAuth.google.clientID,
   clientID        : ENV['GOOGLE_CLIENT'],
   // clientSecret    : OAuth.google.clientSecret,
-  clientSecret    : ENV['GOOGLE_SECRET']
+  clientSecret    : ENV['GOOGLE_SECRET'],
   callbackURL     : OAuth.google.callbackURL,
   enableProof     : true,
   profileFields   : ['name', 'emails']
