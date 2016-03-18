@@ -11,7 +11,6 @@ body {
 .goog-login {
 	max-height: 32px;
 	float: right;
-
 }
 
 /*-------------------- INDEX PAGE ------------------*/
@@ -21,7 +20,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 650px;
+	height: 800px;
 	text-align: center;
 	color: white;
 }
@@ -122,7 +121,7 @@ hr {
 
 .form-control:focus {
 	border-color: #9d9d9d;
-	box-shadow: 0 0 5px rgba(255,181,0,.5);
+	box-shadow: 0 0 5px rgba(190,143,64,1);
 }
 
 /*---------------------------*/
