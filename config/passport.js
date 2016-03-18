@@ -5,8 +5,11 @@ var GoogleStrategy = require('passport-google-oauth2').Strategy;
 var OAuth = require('../secrets');
 
 passport.use('facebook', new FacebookStrategy({
-  clientID        : OAuth.fb.clientID,
-  clientSecret    : OAuth.fb.clientSecret,
+  // clientID        : OAuth.fb.clientID,
+  clientID        : ENV['FB_CLIENT'],
+  // clientSecret    : OAuth.fb.clientSecret,
+  clientSecret    : ENV['FB_SECRET'],
+
   callbackURL     : 'https://home-court-advantage.herokuapp.com/auth/facebook/callback',
   enableProof     : true,
   profileFields   : ['name', 'emails']
@@ -44,8 +47,10 @@ passport.use('facebook', new FacebookStrategy({
 })); //here
 
 passport.use(new GoogleStrategy({
-  clientID        : OAuth.google.clientID,
-  clientSecret    : OAuth.google.clientSecret,
+  // clientID        : OAuth.google.clientID,
+  clientID        : ENV['GOOGLE_CLIENT'],
+  // clientSecret    : OAuth.google.clientSecret,
+  clientSecret    : ENV['GOOGLE_SECRET']
   callbackURL     : OAuth.google.callbackURL,
   enableProof     : true,
   profileFields   : ['name', 'emails']
