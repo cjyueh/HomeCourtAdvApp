@@ -28,7 +28,7 @@ router.route('/teams/api/:id')
 router.route('/teams/api/:id/userFav')
   .put(teamsController.userFav);
 
-router.route('/teams/api/:id/userFav')
+router.route('/teams/api/:id/userUnfav')
   .put(teamsController.userUnfav);
 
 // USER routes // signup could just be edit

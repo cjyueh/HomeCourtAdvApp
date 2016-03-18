@@ -1,12 +1,15 @@
 // get fav btn
 var $favBtn = $('#fav');
-var $star = $('#star');
+var $emptyStar = $('#empty-star');
+var $filledStar = $('#filled-star');
 
-$favBtn.on('click', function(e){
+
 
 var pathname = window.location.pathname;
 var splitUrl = pathname.split('/');
 var teamId = splitUrl[2];
+
+$favBtn.on('click', function(e){
 
 var favEndPoint = '/teams/api/' + teamId + '/userFav';
   e.preventDefault();
@@ -17,8 +20,8 @@ var favEndPoint = '/teams/api/' + teamId + '/userFav';
     dataType: "json",
     success: function (data) {
       // $favBtn.addClass('btn btn-success');
-      $star.removeClass('glyphicon-star-empty');
-      $star.addClass('glyphicon-star');
+      $emptyStar.removeClass('glyphicon-star-empty');
+      $emptyStar.addClass('glyphicon-star');
       console.log(data._id)
       var userId = data._id
     },
@@ -28,3 +31,22 @@ var favEndPoint = '/teams/api/' + teamId + '/userFav';
   });
 });
 
+$filledStar.on('click', function(e){
+  var unFavEndPoint = '/teams/api/' + teamId + '/userUnfav'
+  e.preventDefault();
+  $.ajax({
+    type: "PUT",
+    url: unFavEndPoint,
+    data: {favorite: teamId},
+    dataType: "json",
+    success: function (data) {
+      $filledStar.removeClass('glyphicon-star');
+      $filledStar.addClass('glyphicon-star-empty');
+      console.log(data._id);
+      // var userId = data._id;
+    },
+      error: function (err){
+        console.log("ERROR:", err);
+    }
+  });
+});
