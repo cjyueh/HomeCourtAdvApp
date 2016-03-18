@@ -12,10 +12,17 @@ var teamsController = {
   showTeam: function(req,res) {
     var id = req.params.id;
     // req.session.userId
-    console.log("this is the user: ", req.user);
-
+    // console.log("this is the user: ", req.user.favorites);
     Team.findById({_id: id}, function(err, team){
-      err ? console.log(err) : res.render('teams/show', {user: req.user,team: team});
+      console.log("here is the user:", req.user);
+      console.log("TEAM here:", team);
+      if(req.user) {
+        if(req.user.favorites.indexOf(team._id) !== -1){
+          var isFavorited = true;
+        }
+      }
+      console.log("favorited?", isFavorited);
+      err ? console.log(err) : res.render('teams/show', {user: req.user,team: team, isFavorited: isFavorited});
     });
   },
   teamApi: function(req, res) {
@@ -31,22 +38,22 @@ var teamsController = {
         }
 
         Bar.find({_id: {$in: barIdArray }}, function(err, bar) {
-          res.json(bar)
-        })
+          res.json(bar);
+        });
       }
     });
   },
   teamsNav: function(req,res) {
     Team.find({}, function(err, data){
       res.json(data);
-    })
+    });
   },
   userFav: function(req, res) {
     // get team id from url
-    var teamId = req.body.favorite
+    var teamId = req.body.favorite;
     console.log("this is the teamid: ", teamId);
     // get user id from session
-    var userId = req.user._id
+    var userId = req.user._id;
     // find user in db
     // update user favs with team id
 
@@ -54,7 +61,7 @@ var teamsController = {
       // res.send(user);
       console.log(user);
       if (user.favorites.indexOf(teamId) === -1 ) {
-        user.favorites.push(teamId)
+        user.favorites.push(teamId);
       }
 
       user.save(function(err, user){
@@ -62,13 +69,13 @@ var teamsController = {
         // is ajax expecting to get somethign back?
         res.send(user);
         // res.redirect('/users/' + userId);
-      })
+      });
       // user.update({_id: userId}, {$push: {favorites: teamId} }, function(err, user){
       //   console.log(user);
       //   res.send(user);
       // })
 
-    })
+    });
   }
 };
 

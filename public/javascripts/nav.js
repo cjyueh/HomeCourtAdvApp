@@ -13,4 +13,4 @@ $.get(teamIndexEndPoint, function(data) {
   // send data to template
   // render(data)
   $('#teams-nav').append(compileTeamsList);
-})
+});

@@ -29,7 +29,6 @@ router.route('/teams/:id')
   // having problem making two GET reqs
   .get(teamsController.showTeam);
 
-
 router.route('/teams/api/:id')
   .get(teamsController.teamApi);
 

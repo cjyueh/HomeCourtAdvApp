@@ -51,14 +51,10 @@ hr {
 	top: 50px;
 }
 
-#star {
-	color: #9d9d9d;
+.glyphicon {
+	color: #303030;
 	width: 30px;
 	padding: 10px;
-}
-
-.glyphicon-star-empty {
-	color: #303030;
 }
 
 #bar-map-col {
@@ -75,7 +71,6 @@ hr {
 	border: 1px solid #9d9d9d;
 	width:750px;
 	height:500px;
-	/*margin-bottom: 40px;*/
 }
 
 .g-pic {
@@ -84,8 +79,9 @@ hr {
 /*---------------------------*/
 
 /*--- USER PROFILE PICTURE ---*/
-#user-pic {
-	width: 200px;
+.user-pic {
+	max-height: 100px;
+	max-width: 200px;
 }
 
 .user-avatar {

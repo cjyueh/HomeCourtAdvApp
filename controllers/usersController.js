@@ -1,4 +1,5 @@
 var User = require('../models/user');
+var Team = require('../models/team');
 
 var usersController = {
   // check if user is logged in
@@ -22,8 +23,24 @@ var usersController = {
     User.findById({_id: id}, function(err, user){
       console.log({user: user});
       // err ? console.log(err) : res.json({user});
-      err ? console.log(err) : res.render('users/show', {user: user});
+      // err ? console.log(err) : res.render('users/show', {user: user});
+      console.log("USER FAVS:", user.favorites);
+      var teamFavsArray = [];
+      Team.find({_id: {$in: user.favorites}}, function(err, team){
+        for(i=0; i < team.length; i++) {
+          console.log("THIS IS A name out of TEAMs array:", team[i].name);
+          // res.json(team[i].name)
+          teamFavsArray.push(team[i].name);
+          console.log("THESE ARE THE TEAM NAMES:", teamFavsArray)
+        }
+          err ? console.log(err) : res.render('users/show', {user: user, team: teamFavsArray} );
+      })
     });
+
+    // Team.find({}, function(err, teams){
+    //   res.send({teams})
+    // })
+
   },
   signUp: function(req, res) {
     res.render('users/user-new-form');
