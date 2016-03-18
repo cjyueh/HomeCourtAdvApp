@@ -8,7 +8,6 @@ var teamsController = require('../controllers/teamsController');
 var usersController = require('../controllers/usersController');
 var barsController = require('../controllers/barsController');
 
-
 console.log(teamsController);
 /* GET home page. */
 // router.get('/', function(req, res, next) {
