@@ -19,6 +19,7 @@ var teamsController = {
       if(req.user) {
         // check if team has already been favd
         if(req.user.favorites.indexOf(team._id) !== -1){
+          // if true, render full star on view
           var isFavorited = true;
         }
       }
@@ -30,15 +31,17 @@ var teamsController = {
     var id = req.params.id;
     
     var barIdArray = [];
-
+    // find bars referenced in team
     Team.findById({_id: id}, function(err, team){
       if (err) { console.log(err) }
       else {
+        // get bar ids 
         for (var i = 0; i < team.bars.length; i++) {
           barIdArray.push(team.bars[i]); 
         }
-
+        // search each bar id at same time in db to get full bar info
         Bar.find({_id: {$in: barIdArray }}, function(err, bar) {
+          // send bar details to ajax to render
           res.json(bar);
         });
       }

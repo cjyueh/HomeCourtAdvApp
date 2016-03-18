@@ -21,16 +21,16 @@ var usersController = {
     var id = req.params.id;
     console.log(id);
     User.findById({_id: id}, function(err, user){
-      console.log({user: user});
-      console.log("USER FAVS:", user.favorites);
       var teamFavsArray = [];
+      // find all teamIDs in user favs to render info on user prof
       Team.find({_id: {$in: user.favorites}}, function(err, team){
+        // iterate through all the ids to get their names
         for(i=0; i < team.length; i++) {
-          console.log("THIS IS A name out of TEAMs array:", team[i].name);
           // res.json(team[i].name)
+          // push team name to array
           teamFavsArray.push(team[i].name);
-          console.log("THESE ARE THE TEAM NAMES:", teamFavsArray)
         }
+          // render user info and team names
           err ? console.log(err) : res.render('users/show', {user: user, team: teamFavsArray} );
       })
     });
