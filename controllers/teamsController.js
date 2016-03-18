@@ -68,10 +68,29 @@ var teamsController = {
       }
 
       user.save(function(err, user){
-        console.log(user);
         res.send(user);
       });
 
+    });
+  },
+  userUnfav: function(req, res) {
+    var teamId = req.body.favorite;
+    var userId = req.user._id;
+    // find user by id
+    User.findById({_id: userId}, function(err,user){
+        console.log("this is the user.fav", user.favorites)
+        // get array of user team favs
+        var favsArray = user.favorites;
+        // find index in arr of the team to unfav
+        var index = favsArray.indexOf(teamId);
+        // if its in array, remove it
+        if (index > -1) {
+          favsArray.splice(index, 1)
+        }
+        // save changes
+        user.save(function(err, user){
+        res.send(user);
+      });
     });
   }
 };
