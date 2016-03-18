@@ -53,7 +53,7 @@ var teamsController = {
     });
   },
   userFav: function(req, res) {
-    // get team id from url
+    // get team id from url 
     var teamId = req.body.favorite;
     console.log("this is the teamid: ", teamId);
     // get user id from session
