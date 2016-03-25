@@ -1,6 +1,6 @@
 // make a req to our teams index pg
 
-teamIndexEndPoint = '/teams/api';
+var teamIndexEndPoint = '/teams/api';
 
 $.get(teamIndexEndPoint, function(data) {
   // grab template element id
@@ -13,4 +13,4 @@ $.get(teamIndexEndPoint, function(data) {
   // send data to template
   // render(data)
   $('#teams-nav').append(compileTeamsList);
-})
+});

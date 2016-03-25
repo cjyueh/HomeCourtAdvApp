@@ -11,7 +11,6 @@ body {
 .goog-login {
 	max-height: 32px;
 	float: right;
-
 }
 
 /*-------------------- INDEX PAGE ------------------*/
@@ -21,7 +20,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 650px;
+	height: 800px;
 	text-align: center;
 	color: white;
 }
@@ -51,14 +50,10 @@ hr {
 	top: 50px;
 }
 
-#star {
-	color: #9d9d9d;
+.glyphicon {
+	color: #303030;
 	width: 30px;
 	padding: 10px;
-}
-
-.glyphicon-star-empty {
-	color: #303030;
 }
 
 #bar-map-col {
@@ -75,7 +70,6 @@ hr {
 	border: 1px solid #9d9d9d;
 	width:750px;
 	height:500px;
-	/*margin-bottom: 40px;*/
 }
 
 .g-pic {
@@ -84,8 +78,9 @@ hr {
 /*---------------------------*/
 
 /*--- USER PROFILE PICTURE ---*/
-#user-pic {
-	width: 200px;
+.user-pic {
+	max-height: 100px;
+	max-width: 200px;
 }
 
 .user-avatar {
@@ -126,7 +121,7 @@ hr {
 
 .form-control:focus {
 	border-color: #9d9d9d;
-	box-shadow: 0 0 5px rgba(255,181,0,.5);
+	box-shadow: 0 0 5px rgba(190,143,64,1);
 }
 
 /*---------------------------*/

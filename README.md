@@ -6,7 +6,7 @@ Note that as of now we have only deployed in San Francisco for the following NBA
 
 ## Deployment
 
-This is currently deployted on Heroku [here](http://home-court-advantage.herokuapp.com)
+This is currently deployed on Heroku [here](http://home-court-advantage.herokuapp.com)
 
 ## Built With
 
