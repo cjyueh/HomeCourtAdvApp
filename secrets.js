@@ -1,12 +1,12 @@
 const OAUTH = {
   fb: {
-    clientID: ENV['FB_CLIENT'],
-    clientSecret: ENV['FB_SECRET']
+    clientID: process.env.FB_CLIENT,
+    clientSecret: process.env.FB_SECRET
   },
   google: {
-    clientID: ENV['GOOGLE_CLIENT'],
-    clientSecret: ENV['GOOGLE_SECRET']
-    // callbackURL: "http://home-court-advantage.herokuapp.com/oauth2callback"
+    clientID: process.env.GOOGLE_CLIENT,
+    clientSecret: process.env.GOOGLE_SECRET,
+    callbackURL: "http://home-court-advantage.herokuapp.com/oauth2callback"
   }
 };
 
